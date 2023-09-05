@@ -14,6 +14,7 @@ let rec fibTail x =
   in fibTailHelper (x, 1, 0)
 
 
+(*ta funkcja jest nie pewna i tyle*)
   let rec root3 number =
     let rec root3Helper (number, guess) =
       if abs_float (guess ** 3.0 -. number) <= (10.0 ** (-15.0)) *. abs_float number then

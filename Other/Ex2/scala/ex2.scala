@@ -71,3 +71,12 @@ def replaceNth[A](xs: List[A], index: Int, element: A): List[A] = {
 
 println(replaceNth(List(1,2,3,4,5), 0, 99))
 println(replaceNth(List(1,2,3,4,5), 2, 99))
+
+// glupie zd z krotkami
+val patternA = List(-2, -1, 0, 1, 2)
+val patternB = List((1, 2), (0, 1))
+
+val List(_, _, x, _, _) = patternA;
+val List(_, (y, _)) = patternB;
+
+println(x+y==0)
