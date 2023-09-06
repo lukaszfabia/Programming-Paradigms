@@ -12,9 +12,11 @@ def fib(x: Int) : Int = {
 def fibTail(x: Int) : Int  = {
     @tailrec
     def getFib(x: Int, prev: Int, prevPrev: Int): Int = {
-        if (x == 0) 0
-        else if (x == 1) prev
-        else getFib(x-1, prev + prevPrev, prev)
+        x match{
+            case 0 => 0
+            case 1 => prev
+            case _ => getFib(x-1, prev + prevPrev, prev)
+        }
     }
     getFib(x, 1, 0)
 }
@@ -25,18 +27,23 @@ val fibTailList = list.map(fibTail)
 
 println(fibList==fibTailList)
 
-def root3(number: Double) : Double = {
+// val number42thTail = fibTail(42)
+// rekurencja ogonowa jest szybsza, bo nie tworzy nowych klatek na stosie, tylko wykorzystuje te, ktore juz sa
+// val number42thNormal = fib(42)
+
+def root3(a: Double) : Double = {
     @tailrec
     def calculate(x: Double): Double = {
-        val next = x - (x*x*x - number)/(3*x*x)
-        if (next == x) x
-        else calculate(next)
+        if (Math.abs(x*x*x-a)<=Math.pow(10, -15)*Math.abs(a)) then x
+        else calculate(x+(a/(x*x)-x)/3)
     }
-    calculate(number)
+    if (a>1) then calculate(a/3)
+    else calculate(a)
 }
 
 
-println(root3(0.2))
+println(root3(27.0))
+println(root3(0.625))
 
 //czy xs jest w ys
 def initSegment[A](xs: List[A], ys: List[A]): Boolean = {
