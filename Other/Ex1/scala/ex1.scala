@@ -1,42 +1,26 @@
 import scala.annotation.tailrec
 
 def flatten[A](xss: List[List[A]]): List[A] = {
-  if (xss!=Nil){
-    xss.head:::flatten(xss.tail)
-  }else{
-    Nil
-  }
+  if xss!=Nil then xss.head:::flatten(xss.tail)
+  else Nil
 }
 
 def count[A](x: A, xss: List[A]): Int = {
-    if (xss!=Nil){
-        if (xss.head==x){
-            1+count(x,xss.tail)
-        }else{
-            count(x,xss.tail)
-        }
-    }else{
-        0
-    }
+    if xss!=Nil then if (xss.head==x) then 1+count(x,xss.tail) else count(x,xss.tail)
+    else 0
 }
 
 
 def replicate[A](x: A, n: Int): List[A] = {
-    if (n>0){
-        x::replicate(x,n-1)
-    }else{
-        Nil
-    }
+    if n>0 then x::replicate(x, n-1)
+    else Nil
 }
 
 
 // srqtList
 def power2nd(xss: List[Int]): List[Int] ={
-    if (xss!=Nil){
-        (xss.head*xss.head)::power2nd(xss.tail)
-    }else{
-        Nil
-    }
+    if xss!=Nil then xss.head * xss.head :: power2nd(xss.tail)
+    else Nil
 }
 
 def power2nd2(xss: List[Int]): List[Int] ={
@@ -46,22 +30,16 @@ def power2nd2(xss: List[Int]): List[Int] ={
 
 @tailrec
 def palindrome[A](xs: List[A]): Boolean = {
-    if (xs.length<2){
-        true
-    }else if (xs.head == xs.last){
-        palindrome(xs.tail.init)
-    }else{
-        false
-    }
+    if xs.length<2 then true 
+    else if xs.head == xs.last then palindrome(xs.tail.init)
+    else false
+    
 }
 
 
 def listLength[A](xs: List[A]): Int = {
-    if (xs!=Nil){
-        1+listLength(xs.tail)
-    }else{
-        0
-    }
+    if xs!=Nil then 1+listLength(xs.tail)
+    else 0
 }
 
 //tests
