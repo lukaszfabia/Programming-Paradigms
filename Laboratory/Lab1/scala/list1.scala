@@ -26,7 +26,7 @@ def reverse4[A, B, C, D](list: (A, B, C, D)): (D, C, B, A) = {
 // }
 
 def sumProd(s: Int, e: Int): (Int, Int) = {
-  if (s >= e) (0, 1)
+  if s>=e then (0, 1)
   else {
     val (sum, prod) = sumProd(s + 1, e)
     (s + sum, s * prod)

@@ -1,5 +1,3 @@
-import scala.annotation.tailrec
-
 def flatten[A](xss: List[List[A]]): List[A] = {
   if xss!=Nil then xss.head:::flatten(xss.tail)
   else Nil
@@ -10,32 +8,21 @@ def count[A](x: A, xss: List[A]): Int = {
     else 0
 }
 
-
 def replicate[A](x: A, n: Int): List[A] = {
     if n>0 then x::replicate(x, n-1)
     else Nil
 }
 
-
-// srqtList
 def power2nd(xss: List[Int]): List[Int] ={
     if xss!=Nil then xss.head * xss.head :: power2nd(xss.tail)
     else Nil
 }
 
-def power2nd2(xss: List[Int]): List[Int] ={
-    xss.map(x=>x*x)
-}
+val power2nd2 = (xss: List[Int]) => power2nd(xss)
 
-
-@tailrec
 def palindrome[A](xs: List[A]): Boolean = {
-    if xs.length<2 then true 
-    else if xs.head == xs.last then palindrome(xs.tail.init)
-    else false
-    
+    xs.reverse == xs
 }
-
 
 def listLength[A](xs: List[A]): Int = {
     if xs!=Nil then 1+listLength(xs.tail)
