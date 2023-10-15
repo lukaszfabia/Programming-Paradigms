@@ -1,39 +1,48 @@
-import scala.annotation.tailrec
+// import scala.annotation.tailrec
 
 def reverse4[A, B, C, D](list: (A, B, C, D)): (D, C, B, A) = {
   (list._4, list._3, list._2, list._1)
 }
 
+// def sumProd(s: Int, e: Int): (Int, Int) = {
+//   if s==e then return (0, 0)
+//   def createList(s: Int, e: Int): List[Int] = {
+//     if s >= e then Nil
+//     else s :: createList(s + 1, e)
+//   }
+
+//   val list = createList(s, e)
+//   val (sum, prod) = (0, 1)
+
+//   def count(list: List[Int]): (Int, Int) = {
+//     if list == Nil then (sum, prod)
+//     else {
+//       val (sum, prod) = count(list.tail)
+//       (sum + list.head, prod * list.head)
+//     }
+//   }
+
+//   count(list)
+// }
+
 def sumProd(s: Int, e: Int): (Int, Int) = {
-  def createList(s: Int, e: Int): List[Int] = {
-    if s >= e then Nil
-    else s :: createList(s + 1, e)
+  if (s >= e) (0, 1)
+  else {
+    val (sum, prod) = sumProd(s + 1, e)
+    (s + sum, s * prod)
   }
-
-  val list = createList(s, e)
-  val (sum, prod) = (0, 1)
-
-  def count(list: List[Int]): (Int, Int) = {
-    if list == Nil then (sum, prod)
-    else {
-      val (sum, prod) = count(list.tail)
-      (sum + list.head, prod * list.head)
-    }
-  }
-
-  count(list)
 }
 
-def isPerfectTailRec(n: Int): Boolean = {
-  @tailrec
-  def divider(sum: Int, i: Int): Int = {
-    if i == 0 then sum
-    else if n % i == 0 then divider(sum + i, i - 1)
-    else divider(sum, i - 1)
-  }
+// def isPerfectTailRec(n: Int): Boolean = {
+//   @tailrec
+//   def divider(sum: Int, i: Int): Int = {
+//     if i == 0 then sum
+//     else if n % i == 0 then divider(sum + i, i - 1)
+//     else divider(sum, i - 1)
+//   }
 
-  n == divider(0, n - 1)
-}
+//   n == divider(0, n - 1)
+// }
 
 def isPerfect(n: Int): Boolean = {
   if n < 1 then return false
@@ -70,6 +79,7 @@ println(sumProd(-1, -10) == (0, 1))
 println(sumProd(1, 0) == (0, 1))
 println(sumProd(1, 2) == (1, 1))
 println(sumProd(-10, -5) == (-40, -30240))
+println(sumProd(0, 0)==(0, 1))
 
 
 println("Test for isPerfect")
@@ -78,7 +88,6 @@ val perfectNumbers = list.filter(isPerfect)
 
 
 println("Test for insert")
-
 println(insert(List(1, 2, 3), 4, 0) == List(4, 1, 2, 3))
 println(insert(List(1, 2, 3), 4, 1) == List(1, 4, 2, 3))
 println(insert(List('h', 'e', 'l', 'o'), 'l', 2) == List('h', 'e', 'l', 'l', 'o'))

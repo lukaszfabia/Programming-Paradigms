@@ -1,6 +1,6 @@
 let reverse4 (a, b, c, d) = (d, c, b, a)
 
-let sumProd s e =
+(* let sumProd s e =
   let rec createList s e =
     if s >= e then []
     else s :: (createList (s + 1) e)
@@ -14,7 +14,13 @@ let sumProd s e =
     else count (List.tl list) (sum + List.hd list) (prod * List.hd list)
   in
 
-  count list sum prod;;
+  count list sum prod;; *)
+
+let rec sumProd s e =
+  if s >= e then (0, 1)
+  else
+    let sum, prod = sumProd (s + 1) e in
+    (s + sum, s * prod)
 
 let isPerfect n = 
 
