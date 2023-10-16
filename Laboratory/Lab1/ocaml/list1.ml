@@ -39,12 +39,21 @@ let isPerfect n =
     let resSum = letsSum (dividersList [] 1 n) 0 in 
     if resSum = n then true else false;;
 
-
 let rec insert list element index =
   if list = [] then [element]
   else if index = 0 then element :: list
   else List.hd list :: insert (List.tl list) element (index - 1);;
 
+let rec set list element index = 
+  if list = [] then []
+  else if index = 0 then element :: (List.tl list)
+  else List.hd list :: set (List.tl list) element (index-1);;
+
+
+let rec substitute list oldElement newElement =
+  if list = [] then []
+  else if oldElement = (List.hd list) then newElement :: (List.tl list)
+  else (List.hd list) :: substitute (List.tl list) oldElement newElement;;
 
 (* Testy dla reverse4 *)
 (reverse4 (1, 2, 3, 4) = (4, 3, 2, 1));;
@@ -72,3 +81,13 @@ let rec insert list element index =
 (insert ['h'; 'e'; 'l'; 'o'] 'l' 2 = ['h'; 'e'; 'l'; 'l'; 'o']);;
 (insert [true; false; true] false (-1) = [true; false; true; false]);;
 (insert ['1'; '2'; '3'] '4' 4 = ['1'; '2'; '3'; '4']);;
+
+(* Testy dla set *)
+(set [1; 2; 3] 4 0 = [4; 2; 3]);;
+(set [1; 2; 3] 4 1 = [1; 4; 3]);;
+(set [true; false; true] false (-1) = [true; false; true]);;
+
+(* Test dla substitute *)
+(substitute [1; 2; 3; 4; 5] 3 999 = [1; 2; 999; 4; 5]);;
+(substitute [1; 2; 3; 4; 5] 1 999 = [999; 2; 3; 4; 5]);;
+(substitute [1; 2; 3; 4; 5] 5 999 = [1; 2; 3; 4; 999]);;

@@ -18,7 +18,7 @@ def power2nd(xss: List[Int]): List[Int] ={
     else Nil
 }
 
-val power2nd2 = (xss: List[Int]) => power2nd(xss)
+val power2nd = (xss: List[Int]) => power2nd2(xss)
 
 def palindrome[A](xs: List[A]): Boolean = {
     xs.reverse == xs
