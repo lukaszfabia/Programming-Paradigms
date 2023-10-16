@@ -68,6 +68,22 @@ def insert[A](list: List[A], element: A, index: Int): List[A] = {
   }
 }
 
+def set[A](list: List[A], element: A, index: Int): List[A] = {
+  if list == Nil then Nil
+  else {
+    if index==0 then element :: list.tail
+    else list.head :: set(list.tail, element, index-1)
+  }
+} 
+
+def substitute[A](list: List[A], oldElement: A, newElement: A): List[A] = {
+  if list == Nil then Nil
+  else{
+    if list.head == oldElement then newElement :: list.tail
+    else list.head :: substitute(list.tail, oldElement, newElement)
+  }
+}
+
 println("Test for reverse4")
 println(reverse4(true, 'd', "string", 1) == (1, "string", 'd', true))
 println(reverse4(1, 2, 3, 4) == (4, 3, 2, 1))
@@ -93,3 +109,12 @@ println(insert(List(1, 2, 3), 4, 1) == List(1, 4, 2, 3))
 println(insert(List('h', 'e', 'l', 'o'), 'l', 2) == List('h', 'e', 'l', 'l', 'o'))
 println(insert(List(true, false, true), false, -1) == List(true, false, true, false))
 println(insert(List('1', '2', '3'), '4', 4) == List('1', '2', '3', '4'))
+
+println("Test for set")
+println(set(List(1,2,3), 4, 0)==List(4, 2, 3))
+println(set(List(), 4, 5) == List())
+
+println("Test for substitute")
+println(substitute(List(0,1,2,3,4,5), 4, 99)== List(0,1,2,3,99,5))
+println(substitute(List(0,1,2,3,4,5), -1, 99) == List(0,1,2,3,4,5))
+println(substitute(Nil, -1, 231)==Nil)
