@@ -29,14 +29,14 @@ let isPerfect n =
     else dividers
   in
     
-  let rec letsSum list sum =
-    if list = [] then sum
-    else letsSum (List.tl list) (sum + List.hd list)
+  let rec letsSum list =
+    if list = [] then 0
+    else List.hd list + letsSum (List.tl list)
   in
   
   if n < 1 then false
   else 
-    let resSum = letsSum (dividersList [] 1 n) 0 in 
+    let resSum = letsSum (dividersList [] 1 n) in 
     if resSum = n then true else false;;
 
 let rec insert list element index =
@@ -44,16 +44,6 @@ let rec insert list element index =
   else if index = 0 then element :: list
   else List.hd list :: insert (List.tl list) element (index - 1);;
 
-let rec set list element index = 
-  if list = [] then []
-  else if index = 0 then element :: (List.tl list)
-  else List.hd list :: set (List.tl list) element (index-1);;
-
-
-let rec substitute list oldElement newElement =
-  if list = [] then []
-  else if oldElement = (List.hd list) then newElement :: (List.tl list)
-  else (List.hd list) :: substitute (List.tl list) oldElement newElement;;
 
 (* Testy dla reverse4 *)
 (reverse4 (1, 2, 3, 4) = (4, 3, 2, 1));;
@@ -82,12 +72,22 @@ let rec substitute list oldElement newElement =
 (insert [true; false; true] false (-1) = [true; false; true; false]);;
 (insert ['1'; '2'; '3'] '4' 4 = ['1'; '2'; '3'; '4']);;
 
-(* Testy dla set *)
-(set [1; 2; 3] 4 0 = [4; 2; 3]);;
-(set [1; 2; 3] 4 1 = [1; 4; 3]);;
-(set [true; false; true] false (-1) = [true; false; true]);;
 
-(* Test dla substitute *)
-(substitute [1; 2; 3; 4; 5] 3 999 = [1; 2; 999; 4; 5]);;
-(substitute [1; 2; 3; 4; 5] 1 999 = [999; 2; 3; 4; 5]);;
-(substitute [1; 2; 3; 4; 5] 5 999 = [1; 2; 3; 4; 999]);;
+let rec choice list1 list2 = 
+  if list1 = [] && list2 = [] then [] 
+  else if list1 = [] && list2 != [] then list2
+  else if list1 != [] && list2 = [] then list1
+  else if List.hd list1 > List.hd list2 then List.hd list1 :: choice (List.tl list1)  (List.tl list2)
+  else List.hd list2 :: choice (List.tl list1) (List.tl list2);;
+  (* else if List.hd list1 < List.hd list2 then List.hd list2 :: choice (List.tl list1)  (List.tl list2) *)
+  (* else List.hd list1 :: choice (List.tl list1) (List.tl list2);; *)
+
+
+(* Test for choice *)
+(choice [1; 2; 3] [4; 5; 6] = [4; 5; 6]);;
+(choice [1; 2; 3] [1; 2; 3] = [1; 2; 3]);;
+(choice [1; 2; 3] [1; 2; 3; 4] = [1; 2; 3; 4]);;
+(choice [1; 2; 3; 4] [1; 2; 3] = [1; 2; 3; 4]);;
+(choice [1; 5; 3; 8] [2; 7; 4; 1] = [2; 7; 4; 8]);;
+(choice [1; 2; 3; 4] [] = [1; 2; 3; 4]);;
+

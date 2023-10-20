@@ -68,22 +68,6 @@ def insert[A](list: List[A], element: A, index: Int): List[A] = {
   }
 }
 
-def set[A](list: List[A], element: A, index: Int): List[A] = {
-  if list == Nil then Nil
-  else {
-    if index==0 then element :: list.tail
-    else list.head :: set(list.tail, element, index-1)
-  }
-} 
-
-def substitute[A](list: List[A], oldElement: A, newElement: A): List[A] = {
-  if list == Nil then Nil
-  else{
-    if list.head == oldElement then newElement :: list.tail
-    else list.head :: substitute(list.tail, oldElement, newElement)
-  }
-}
-
 println("Test for reverse4")
 println(reverse4(true, 'd', "string", 1) == (1, "string", 'd', true))
 println(reverse4(1, 2, 3, 4) == (4, 3, 2, 1))
@@ -110,11 +94,23 @@ println(insert(List('h', 'e', 'l', 'o'), 'l', 2) == List('h', 'e', 'l', 'l', 'o'
 println(insert(List(true, false, true), false, -1) == List(true, false, true, false))
 println(insert(List('1', '2', '3'), '4', 4) == List('1', '2', '3', '4'))
 
-println("Test for set")
-println(set(List(1,2,3), 4, 0)==List(4, 2, 3))
-println(set(List(), 4, 5) == List())
+// modyfikacja 
+def choice(list1: List[Int], list2: List[Int]): List[Int] = {
+  if list1==Nil && list2==Nil then Nil
+  else if list1 == Nil && list2!=Nil then list2
+  else if list1 != Nil && list2==Nil then list1
+  else if list1.head > list2.head then list1.head :: choice(list1.tail, list2.tail)
+  else list2.head :: choice(list1.tail, list2.tail)
+  // else if list1.head < list2.head then list2.head :: choice(list1.tail, list2.tail)
+  // else list1.head :: choice(list1.tail, list2.tail)
+}
 
-println("Test for substitute")
-println(substitute(List(0,1,2,3,4,5), 4, 99)== List(0,1,2,3,99,5))
-println(substitute(List(0,1,2,3,4,5), -1, 99) == List(0,1,2,3,4,5))
-println(substitute(Nil, -1, 231)==Nil)
+println("Test for choice")
+choice(List(1,2,3), List(4,5,6))==List(4,5,6)
+choice(List(1,2,3), List(1,2,3))==List(1,2,3)
+choice(List(1,2,3), List(0,0,0))==List(1,2,3)
+choice(List(1,2,3), List(0,1,2))==List(1,2,3)
+choice(List(1, 5, 3 ,8), List(2, 7, 4, 1))==List(2, 7, 4, 8)
+choice(List(1, 5, 3 ,8), List(2, 7, 4, 1, 9))==List(2, 7, 4, 8, 9)
+choice(List(1, 5, 3 ,8, 9), List(2, 7, 4, 1))==List(2, 7, 4, 8, 9)
+choice(List(0,0,0,0), List()) == List(0,0,0,0)
