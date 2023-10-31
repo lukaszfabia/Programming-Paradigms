@@ -14,8 +14,7 @@ let rec sqrList xs =
   if xs = [] then []
   else List.hd xs * List.hd xs :: sqrList (List.tl xs);;
 
-let rec palindrome xs =
-  List.rev xs = xs
+let palindrome xs = List.rev xs = xs
 
 let rec listLength xs =
   if xs = [] then 0
