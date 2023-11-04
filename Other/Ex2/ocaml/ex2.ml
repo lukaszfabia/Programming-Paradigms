@@ -1,3 +1,17 @@
+let stackDeep = ref 0;;
+
+let rec evenR n = 
+  stackDeep := !stackDeep + 1;
+  if n = 0 then true else oddR (n - 1)
+
+and oddR n = 
+  stackDeep := !stackDeep + 1;
+  if n = 0 then false else evenR (n - 1);;
+
+evenR 3;;
+Printf.printf "stackDeep = %d\n" !stackDeep;;
+
+
 let rec fib x =
   match x with
   | 0 -> 0
