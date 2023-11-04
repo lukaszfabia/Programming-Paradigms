@@ -12,6 +12,13 @@ def oddR(n: Int): Boolean = {
     if n == 0 then false else evenR(n-1)
 }
 // glebokosc jest taka sama w scali i w ocamlu 
+// evenR(3)
+// oddR(2)
+// evenR(1)
+// oddR(0)
+// -------- 4
+// zwracamy false
+
 println(evenR(3))
 println(stackDeep)
 
