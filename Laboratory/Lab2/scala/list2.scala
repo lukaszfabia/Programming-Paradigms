@@ -15,18 +15,24 @@ import scala.annotation.tailrec
 //  cut(list, a, b, Nil)
 // }
 
-def cutOut[A](a: Int)(b: Int): List[A] => List[A] = {
-  def cut[B](list: List[B], begin: Int, end: Int): List[B] = {
-    (list, begin, end) match {
-      case (_, _, -1) => Nil
-      case (head :: tail, 0, _) => head :: cut(tail, 0, end - 1)
-      case (_ :: tail, _, _) => cut(tail, begin - 1, end - 1)
-      case (Nil, _, _) => Nil
-    }
-  }
 
-  cut(_: List[A], begin = a, end = b)
+// to sie rozni tyle ze def nie przyjmuje odrazu listy tylko najpierw a i b
+// potem w drugiej linii mozna wywolac to dla listy mozna nawet zrobic to w 3 liniach
+def cutOut[A](a: Int)(b: Int)(list: List[A]): List[A] = {
+  (list, a, b) match {
+    case (_, _, -1) => Nil
+    case (head :: tail, 0, _) => head :: cutOut(0)(b - 1)(tail)
+    case (_ :: tail, _, _) => cutOut(a - 1)(b - 1)(tail)
+    case (Nil, _, _) => Nil
+  }
 }
+
+val list = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+val cut1 = cutOut(2)
+val cut2 = cut1(5)
+val cut3 = cut2(list)
+println(cut3)
+
 
 println(cutOut(1)(2)(List(1, 2, 222, 3, 4)) == List(2, 222))
 println(cutOut(0)(1)(List(1, 2, 222, 3, 4)) == List(1, 2))
