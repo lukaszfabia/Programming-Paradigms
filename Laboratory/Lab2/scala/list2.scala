@@ -15,26 +15,35 @@ import scala.annotation.tailrec
 //  cut(list, a, b, Nil)
 // }
 
-def cutOut[A](list: List[A], a: Int, b: Int): List[A] = {
-  (list, a, b) match
-    case (_, _, -1) => Nil
-    case (head :: tail, 0, _) => head :: cutOut(tail, 0, b - 1)
-    case (_ :: tail, _, _) => cutOut(tail, a - 1, b - 1)
-    case (Nil, _, _) => Nil
+def cutOut[A](a: Int)(b: Int): List[A] => List[A] = {
+  def cut[B](list: List[B], begin: Int, end: Int): List[B] = {
+    (list, begin, end) match {
+      case (_, _, -1) => Nil
+      case (head :: tail, 0, _) => head :: cut(tail, 0, end - 1)
+      case (_ :: tail, _, _) => cut(tail, begin - 1, end - 1)
+      case (Nil, _, _) => Nil
+    }
+  }
+
+  cut(_: List[A], begin = a, end = b)
 }
 
-println(cutOut(List(1, 2, 222, 3, 4), 1, 2)== List(2, 222))
-println(cutOut(List(1, 2, 222, 3, 4), 0, 1)== List(1, 2))
-println(cutOut(List(1, 2, 222, 3, 4), 0, 0)== List(1))
-println(cutOut(List(1, 2, 222, 3, 4, 11), 0, 4)== List(1, 2, 222, 3, 4))
-println(cutOut(List(1, 2, 222, 3, 4), 0, 5)== List(1, 2, 222, 3, 4))
-println(cutOut(List(1, 2, 222, 3, 4), -1, 10)== Nil)
-println(cutOut(Nil, 1, 1)==Nil)
-println(cutOut(List(1), 1, 1)==Nil)
-println(cutOut(List(1), 0, 0) == List(1))
-println(cutOut(List(1,2,3,5,15), 12, -12) == Nil)
-println(cutOut(List(1,2,3,5,15), -12, 12) == Nil)
-println(cutOut(List(true, true, false, false, false), 0, -10) == List(true, true, false, false, false))
+println(cutOut(1)(2)(List(1, 2, 222, 3, 4)) == List(2, 222))
+println(cutOut(0)(1)(List(1, 2, 222, 3, 4)) == List(1, 2))
+println(cutOut(0)(0)(List(1, 2, 222, 3, 4)) == List(1))
+println(cutOut(0)(-1)(List(1, 2, 222, 3, 4)) == Nil)
+println(cutOut(0)(-1)(Nil) == Nil)
+println(cutOut(0)(1)(Nil) == Nil)
+println(cutOut(0)(0)(Nil) == Nil)
+println(cutOut(0)(4)(List(1, 2, 222, 3, 4, 11)) == List(1, 2, 222, 3, 4))
+println(cutOut(0)(5)(List(1, 2, 222, 3, 4)) == List(1, 2, 222, 3, 4))
+println(cutOut(-1)(10)(List(1, 2, 222, 3, 4)) == Nil)
+println(cutOut(1)(1)(Nil) == Nil)
+println(cutOut(12)(-12)(List(1, 2, 3, 5, 15)) == Nil)
+println(cutOut(-12)(12)(List(1, 2, 3, 5, 15)) == Nil)
+println(cutOut(0)(-10)(List(true, true, false, false, false)) == List(true, true, false, false, false))
+
+
 
 // 2.2
 

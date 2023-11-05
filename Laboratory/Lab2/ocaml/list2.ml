@@ -10,7 +10,8 @@
   in
   cut list a b [];; *)
 
-
+(*jesli funckcja ma arg typu let f(a,b,c) -> postac zwinieta*)
+(*jesli funckcja ma arg typu let f a b c -> postac rozwinieta*)
 let rec cutOut input a b= 
    match input, a, b with
    | (_, _, -1) -> []
@@ -46,6 +47,7 @@ let rec split3Rec input =
   | _ -> ([], [], [])
 
 let split3Tail input =
+  (* przyklad postaci rozwinietej w funkcji split *)
   let rec split input list1 list2 list3 = 
     match input with
     | element1 :: element2 :: element3 :: tail -> split tail (element1 :: list1) (element2 :: list2) (element3 :: list3)
