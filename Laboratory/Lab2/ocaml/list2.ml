@@ -12,29 +12,34 @@
 
 (*jesli funckcja ma arg typu let f(a,b,c) -> postac zwinieta*)
 (*jesli funckcja ma arg typu let f a b c -> postac rozwinieta*)
-let rec cutOut input a b= 
-   match input, a, b with
-   | (_, _, -1) -> []
-   | (head :: tail, 0, _) -> head :: cutOut tail 0 (b-1)
-   | (_ :: tail, _, _) -> cutOut tail (a-1) (b-1)
-   | ([], _, _) -> [];;
+let rec cutOut a b input = 
+  match input, a, b with
+  | (_, _, -1) -> []
+  | (head :: tail, 0, _) -> head :: cutOut 0 (b - 1) tail
+  | (_ :: tail, _, _) -> cutOut (a - 1) (b - 1) tail
+  | ([], _, _) -> [];;
+
+let cutOut1 = cutOut 1;;
+let cutOut2 = cutOut1 5;;
+let cutOut3 = cutOut2 [1;2;3;4;5;6;78];;
+
 
 
 let () =
-  print_endline (string_of_bool (cutOut [1; 2; 222; 3; 4] 1 2 = [2; 222]));
-  print_endline (string_of_bool (cutOut [1; 2; 222; 3; 4] 0 1 = [1; 2]));
-  print_endline (string_of_bool (cutOut [1; 2; 222; 3; 4] 0 0 = [1]));
-  print_endline (string_of_bool (cutOut [1; 2; 222; 3; 4; 11] 0 4 = [1; 2; 222; 3; 4]));
-  print_endline (string_of_bool (cutOut [1; 2; 222; 3; 4] 0 5 = [1; 2; 222; 3; 4]));
-  print_endline (string_of_bool (cutOut [1; 2; 222; 3; 4] (-1) 10 = []));
-  print_endline (string_of_bool (cutOut [] 1 1 = []));
-  print_endline (string_of_bool (cutOut [1] 1 1 = []));
-  print_endline (string_of_bool (cutOut [1] 0 0 = [1]));
-  print_endline (string_of_bool (cutOut [1; 2; 3; 5; 15] 12 (-12) = []));
-  print_endline (string_of_bool (cutOut [1; 2; 3; 5; 15] (-12) 12 = []));
-  print_endline (string_of_bool (cutOut ['1'; '2'; '3'; '5'; 'x'] (-12) 12 = []));;
-  print_endline (string_of_bool (cutOut [true; false; false; true; false] 0 12 = [true; false; false; true; false]));;
-  print_endline (string_of_bool (cutOut [true; false; false; true; false] 0 (-4) = [true; false; false; true; false]));;
+  print_endline (string_of_bool (cutOut 1 2 [1; 2; 222; 3; 4]= [2; 222]));
+  print_endline (string_of_bool (cutOut 0 1 [1; 2; 222; 3; 4]= [1; 2]));
+  print_endline (string_of_bool (cutOut 0 0 [1; 2; 222; 3; 4] = [1]));
+  print_endline (string_of_bool (cutOut 0 4 [1; 2; 222; 3; 4; 11]= [1; 2; 222; 3; 4]));
+  print_endline (string_of_bool (cutOut 0 5 [1; 2; 222; 3; 4]= [1; 2; 222; 3; 4]));
+  print_endline (string_of_bool (cutOut (-1) 10 [1; 2; 222; 3; 4]= []));
+  print_endline (string_of_bool (cutOut 1 1 []= []));
+  print_endline (string_of_bool (cutOut 1 1 [1] = []));
+  print_endline (string_of_bool (cutOut 0 0 [1] = [1]));
+  print_endline (string_of_bool (cutOut 12 (-12) [1; 2; 3; 5; 15] = []));
+  print_endline (string_of_bool (cutOut (-12) 12 [1; 2; 3; 5; 15] = []));
+  print_endline (string_of_bool (cutOut (-12) 12 ['1'; '2'; '3'; '5'; 'x'] = []));;
+  print_endline (string_of_bool (cutOut 0 12 [true; false; false; true; false] = [true; false; false; true; false]));;
+  print_endline (string_of_bool (cutOut 0 (-4) [true; false; false; true; false] = [true; false; false; true; false]));;
  
 
 
