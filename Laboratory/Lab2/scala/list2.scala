@@ -34,6 +34,7 @@ println(cutOut(List(1), 1, 1)==Nil)
 println(cutOut(List(1), 0, 0) == List(1))
 println(cutOut(List(1,2,3,5,15), 12, -12) == Nil)
 println(cutOut(List(1,2,3,5,15), -12, 12) == Nil)
+println(cutOut(List(true, true, false, false, false), 0, -10) == List(true, true, false, false, false))
 
 // 2.2
 

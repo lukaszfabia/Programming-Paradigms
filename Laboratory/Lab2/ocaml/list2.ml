@@ -11,8 +11,8 @@
   cut list a b [];; *)
 
 
-let rec cutOut list a b= 
-   match list, a, b with
+let rec cutOut input a b= 
+   match input, a, b with
    | (_, _, -1) -> []
    | (head :: tail, 0, _) -> head :: cutOut tail 0 (b-1)
    | (_ :: tail, _, _) -> cutOut tail (a-1) (b-1)
@@ -30,7 +30,10 @@ let () =
   print_endline (string_of_bool (cutOut [1] 1 1 = []));
   print_endline (string_of_bool (cutOut [1] 0 0 = [1]));
   print_endline (string_of_bool (cutOut [1; 2; 3; 5; 15] 12 (-12) = []));
-  print_endline (string_of_bool (cutOut [1; 2; 3; 5; 15] (-12) 12 = []));;
+  print_endline (string_of_bool (cutOut [1; 2; 3; 5; 15] (-12) 12 = []));
+  print_endline (string_of_bool (cutOut ['1'; '2'; '3'; '5'; 'x'] (-12) 12 = []));;
+  print_endline (string_of_bool (cutOut [true; false; false; true; false] 0 12 = [true; false; false; true; false]));;
+  print_endline (string_of_bool (cutOut [true; false; false; true; false] 0 (-4) = [true; false; false; true; false]));;
  
 
 
