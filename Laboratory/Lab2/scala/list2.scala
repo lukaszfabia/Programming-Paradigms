@@ -18,6 +18,7 @@ import scala.annotation.tailrec
 
 // to sie rozni tyle ze def nie przyjmuje odrazu listy tylko najpierw a i b
 // potem w drugiej linii mozna wywolac to dla listy mozna nawet zrobic to w 3 liniach
+// metoda
 def cutOut[A](a: Int)(b: Int)(list: List[A]): List[A] = {
   (list, a, b) match {
     case (_, _, -1) => Nil
@@ -32,6 +33,24 @@ val cut1 = cutOut(2)
 val cut2 = cut1(5)
 val cut3 = cut2(list)
 println(cut3)
+
+// funkcja tylko bedzie dawac odwrocona liste bo tailrec jest 
+def cutOutAsFunc[A]: Int => Int => List[A] => List[A] = {
+  @tailrec
+  def cut(a: Int)(b: Int)(output: List[A], list: List[A]): List[A] = {
+    (list, a, b) match
+      case (_, _, -1) => output
+      case (head :: tail, 0, _) => cut(0)(b - 1)(head :: output, tail)
+      case (_ :: tail, _, _) => cut(a - 1)(b - 1)(output, tail)
+      case (Nil, _, _) => output
+  }
+  (a: Int) => (b: Int) => (list: List[A]) => cut(a)(b)(Nil, list)
+}
+
+
+val list = (1 to 10).toList
+val cut = cutOutAsFunc[Int](1)(5)
+val result = cut(list)
 
 
 println(cutOut(1)(2)(List(1, 2, 222, 3, 4)) == List(2, 222))
