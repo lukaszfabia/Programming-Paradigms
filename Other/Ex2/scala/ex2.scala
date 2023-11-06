@@ -63,6 +63,24 @@ def root3(a: Double) : Double = {
     else calculate(a)
 }
 
+def root3asFunc: Double => Double = {
+  @tailrec
+  def calculate(a: Double)(x: Double): Double = {
+    if Math.abs(x * x * x - a) <= Math.pow(10, -15) * Math.abs(a) then x
+    else calculate(a)(x + (a / (x * x) - x) / 3)
+  }
+
+  (a: Double) =>
+    if a > 1 then calculate(a)(x = a / 3)
+    else calculate(a)(x = a)
+}
+
+println(root3asFunc(0.216))
+println(root3asFunc(0.0))
+println(root3asFunc(1.0))
+println(root3asFunc(2.0))
+println(root3asFunc(27))
+println(root3asFunc(4.0))
 
 println(root3(27.0))
 println(root3(0.625))
