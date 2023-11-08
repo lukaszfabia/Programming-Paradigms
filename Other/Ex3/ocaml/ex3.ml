@@ -1,3 +1,13 @@
+(*czytamy od prawej do lewej*)
+let f1 x = x 1 1;;
+(* (int -> int -> A) -> A *)
+(*bo 1 jest typu int x jest  dowolnego typu wiec => dowolny typ*)
+
+let f2 x y z = x ( y ^ z );;
+(*(string -> A) -> string -> string -> A*)
+(*mamy operator konkatenacji stringow w ocamlu wiec bedzie (string -> A) -> string -> string -> A bo y i z zostaly ziterpretowane jako string przez ten operator*)
+
+
 let rec sumProd xs = List.fold_left (fun (sum, prod) x -> (sum+x, prod*x)) (0, 1) xs
 
 let result = sumProd [1;2;3;4;5];;
