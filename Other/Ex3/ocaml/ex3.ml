@@ -1,3 +1,5 @@
+(* 3.1 *)
+
 (*czytamy od prawej do lewej*)
 let f1 x = x 1 1;;
 (* (int -> int -> A) -> A *)
@@ -7,6 +9,17 @@ let f2 x y z = x ( y ^ z );;
 (*(string -> A) -> string -> string -> A*)
 (*mamy operator konkatenacji stringow w ocamlu wiec bedzie (string -> A) -> string -> string -> A bo y i z zostaly ziterpretowane jako string przez ten operator*)
 
+
+(* 3.2 *)
+let uncurry3WithLukierek f (a,b,c) = f a b c;;
+let curry3WithLukierek f a b c = f (a,b,c);;
+
+let uncurry3WithoutLukierek = fun f -> fun (a,b,c) -> f a b c;;
+let curry3WithoutLukierek = fun f -> fun a -> fun b -> fun c -> f (a,b,c);;
+
+(* typy sa takie same, czyli typ dowolny *)
+
+(* 3.3 *)
 
 let rec sumProd xs = List.fold_left (fun (sum, prod) x -> (sum+x, prod*x)) (0, 1) xs
 
