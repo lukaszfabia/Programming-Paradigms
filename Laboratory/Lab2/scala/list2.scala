@@ -51,19 +51,20 @@ val result = cut(list)
 
 
 println(cutOut(1, 2)(List(1, 2, 222, 3, 4)) == List(2, 222))
-println(cutOut(0,1)(List(1, 2, 222, 3, 4)) == List(1, 2))
+println(cutOut(0,3)(List(1, 2, 222, 3, 4)) == List(1, 2, 222, 3))
 println(cutOut(0,0)(List(1, 2, 222, 3, 4)) == List(1))
 println(cutOut(0,-1)(List(1, 2, 222, 3, 4)) == Nil)
-println(cutOut(0,-1)(Nil) == Nil)
+println(cutOut(0,1)(Nil) == Nil)
 println(cutOut(0,1)(Nil) == Nil)
 println(cutOut(0,0)(Nil) == Nil)
 println(cutOut(0,4)(List(1, 2, 222, 3, 4, 11)) == List(1, 2, 222, 3, 4))
-println(cutOut(0,5)(List(1, 2, 222, 3, 4)) == List(1, 2, 222, 3, 4))
+println(cutOut(0,5)(List(1.9, 2.34, 222.87, 3.12, 4.77)) == List(1.9, 2.34, 222.87, 3.12, 4.77))
 println(cutOut(-1,10)(List(1, 2, 222, 3, 4)) == Nil)
 println(cutOut(1,1)(Nil) == Nil)
-println(cutOut(12,-12)(List(1, 2, 3, 5, 15)) == Nil)
-println(cutOut(-12,12)(List(1, 2, 3, 5, 15)) == Nil)
+println(cutOut(12,-12)(List("1", "2", "3", "5", "15")) == Nil)
+println(cutOut(-12,12)(List('1', '2', '3', '5', '9')) == Nil)
 println(cutOut(0,-10)(List(true, true, false, false, false)) == List(true, true, false, false, false))
+println(cutOut(0,0)(List(true, true, false, false, false)) == List(true))
 
 
 
@@ -102,11 +103,11 @@ def split3Tail[A](input: List[A]): (List[A], List[A], List[A]) = {
 
 println(split3Tail(List(1, 2, 3, 4, 5, 6, 7)) == (List(4, 1), List(5, 2), List(6, 3)))
 println(split3Tail(List(1, 2, 3, 4, 5, 6)) == (List(4, 1), List(5, 2), List(6, 3)))
-println(split3Tail(List(1, 2, 3, 4, 5))== (List(1), List(2), List(3)))
-println(split3Tail(List(1, 2, 3, 4)) == (List(1), List(2), List(3)))
+println(split3Tail(List('1', '2', '3', '4', '5'))== (List('1'), List('2'), List('3')))
+println(split3Tail(List("1", "2", "3", "4")) == (List("1"), List("2"), List("3")))
 println(split3Tail(List(1, 2, 3)) == (List(1), List(2), List(3)))
-println(split3Tail(List(1, 2))== (Nil, Nil, Nil))
-println(split3Tail(List(1)) == (Nil, Nil, Nil))
+println(split3Tail(List(true, false))== (Nil, Nil, Nil))
+println(split3Tail(List(1.231)) == (Nil, Nil, Nil))
 println(split3Tail(Nil) == (Nil, Nil, Nil))
 
 
@@ -114,8 +115,8 @@ println(split3Rec(List(1, 2, 3, 4, 5, 6, 7)) == (List(1, 4), List(2, 5), List(3,
 println(split3Rec(List(1, 2, 3, 4, 5, 6)) == (List(1, 4), List(2, 5), List(3, 6)))
 println(split3Rec(List(1, 2, 3, 4, 5)) == (List(1), List(2), List(3)))
 println(split3Rec(List(1, 2, 3, 4)) == (List(1), List(2), List(3)))
-println(split3Rec(List(1, 2, 3)) == (List(1), List(2), List(3)))
-println(split3Rec(List(1, 2)) == (Nil, Nil, Nil))
-println(split3Rec(List(1)) == (Nil, Nil, Nil))
+println(split3Rec(List('1', '2', '3')) == (List('1'), List('2'), List('3')))
+println(split3Rec(List(true, false)) == (Nil, Nil, Nil))
+println(split3Rec(List('1')) == (Nil, Nil, Nil))
 println(split3Rec(Nil) == (Nil, Nil, Nil))
 

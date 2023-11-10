@@ -19,15 +19,14 @@ let rec cutOut a b input =
   | (_ :: tail, _, _) -> cutOut (a - 1) (b - 1) tail
   | ([], _, _) -> [];;
 
-let cutOut1 = cutOut 1;;
-let cutOut2 = cutOut1 5;;
-let cutOut3 = cutOut2 [1;2;3;4;5;6;78];;
+let cutout15 = cutOut 1 5;;
+let cut = cutout15 [1; 2; 3; 4; 5; 6; 7; 8; 9; 10];;
 
 
 
 let () =
   print_endline (string_of_bool (cutOut 1 2 [1; 2; 222; 3; 4]= [2; 222]));
-  print_endline (string_of_bool (cutOut 0 1 [1; 2; 222; 3; 4]= [1; 2]));
+  print_endline (string_of_bool (cutOut 0 3 [1; 2; 222; 3; 4]= [1; 2; 222; 3]));
   print_endline (string_of_bool (cutOut 0 0 [1; 2; 222; 3; 4] = [1]));
   print_endline (string_of_bool (cutOut 0 4 [1; 2; 222; 3; 4; 11]= [1; 2; 222; 3; 4]));
   print_endline (string_of_bool (cutOut 0 5 [1; 2; 222; 3; 4]= [1; 2; 222; 3; 4]));
@@ -68,16 +67,16 @@ let () =
   print_endline (string_of_bool (split3Rec [1; 2; 3; 4; 5; 6] = ([1; 4], [2; 5], [3; 6])));
   print_endline (string_of_bool (split3Rec [1; 2; 3; 4; 5] = ([1], [2], [3])));
   print_endline (string_of_bool (split3Rec [1; 2; 3; 4] = ([1], [2], [3])));
-  print_endline (string_of_bool (split3Rec [1; 2; 3] = ([1], [2], [3])));
-  print_endline (string_of_bool (split3Rec [1; 2] = ([], [], [])));
-  print_endline (string_of_bool (split3Rec [1] = ([], [], [])));
+  print_endline (string_of_bool (split3Rec [true; false; true] = ([true], [false], [true])));
+  print_endline (string_of_bool (split3Rec ['1'; '2'] = ([], [], [])));
+  print_endline (string_of_bool (split3Rec ["1"] = ([], [], [])));
   print_endline (string_of_bool (split3Rec [] = ([], [], [])));
 
   print_endline (string_of_bool (split3Tail [1; 2; 3; 4; 5; 6; 7] = ([4; 1], [5; 2], [6; 3])));
   print_endline (string_of_bool (split3Tail [1; 2; 3; 4; 5; 6] = ([4; 1], [5; 2], [6; 3])));
   print_endline (string_of_bool (split3Tail [1; 2; 3; 4; 5] = ([1], [2], [3])));
   print_endline (string_of_bool (split3Tail [1; 2; 3; 4] = ([1], [2], [3])));
-  print_endline (string_of_bool (split3Tail [1; 2; 3] = ([1], [2], [3])));
-  print_endline (string_of_bool (split3Tail [1; 2] = ([], [], [])));
-  print_endline (string_of_bool (split3Tail [1] = ([], [], [])));
+  print_endline (string_of_bool (split3Tail [true; false; true] = ([true], [false], [true])));
+  print_endline (string_of_bool (split3Tail ['1'; '2'] = ([], [], [])));
+  print_endline (string_of_bool (split3Tail ['1'] = ([], [], [])));
   print_endline (string_of_bool (split3Tail [] = ([], [], [])));;
