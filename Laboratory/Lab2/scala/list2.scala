@@ -120,3 +120,22 @@ println(split3Rec(List(true, false)) == (Nil, Nil, Nil))
 println(split3Rec(List('1')) == (Nil, Nil, Nil))
 println(split3Rec(Nil) == (Nil, Nil, Nil))
 
+
+def interleave[A](list: List[A])(n: Int)(list1: List[A]): List[A] = {
+  (list, n, list1) match
+    case (_, _, Nil) => Nil
+    case (Nil, _, _) => Nil
+    case (head :: tail, 0, head1 :: tail1) => head :: head1 :: interleave(tail)(n)(tail1) // przekaldaniec
+    case (head :: tail, n, _) => head :: interleave(tail)(n - 1)(list1) // idziemy do n odpowieniego
+}
+
+interleave(List(1, 2, 3, 4, 5))(2)(List(10, 50, 33)) == List(1, 2, 3, 10, 4, 50, 5, 33)
+interleave(List(1, 2, 3, 4, 5))(0)(List(10, 50, 33, 32, 432, 124, 21)) == List(1, 10, 2, 50, 3, 33, 4, 32, 5, 432)
+interleave(Nil)(0)(List(true, false, true)) == Nil
+interleave(List(0, 1, 2, 3, 4, 5))(1)(Nil) == Nil
+interleave(List(0, 1, 2, 3, 4, 5))(2)(List(10, 50, 33))
+interleave(List(0, 1, 2, 3, 4, 5))(12)(List(10, 50, 33)) == List(0, 1, 2, 3, 4, 5)
+interleave(List(0, 1, 2, 3, 4, 5))(-12)(List(10, 50, 33)) == List(0, 1, 2, 3, 4, 5)
+interleave(List("string"))(0)(List("charakter")) == List("string", "charakter")
+interleave(List("string"))(1)(List("charakter")) == List("string")
+
