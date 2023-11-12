@@ -25,6 +25,31 @@ let rec sumProd xs = List.fold_left (fun (sum, prod) x -> (sum+x, prod*x)) (0, 1
 
 let result = sumProd [1;2;3;4;5];;
 
+(* 3.4 *)
+
+let rec quicksort = function
+  | [] -> [] (*dodanie |*)
+  | [x] -> [x]
+  | xs ->
+    let small = List.filter (fun y -> y < List.hd xs) xs in (*dodanie in jako zmienna lokalna tak samo w drugim*)
+    let large = List.filter (fun y -> y >= List.hd xs) xs in (*let zamiast and *)
+    quicksort small @ quicksort large;; (*wywalnie in bo nie ma zadnej f zagnieżdzonej*)
+
+
+quicksort [6;5;4;3;2];;
+
+let rec quicksort' = function
+ | [] -> [] (*dodanie |*)
+ | x::xs -> 
+    let small = List.filter (fun y -> y < x ) xs in (*dodanie in jako zmienna lokalna tak samo w drugim*)
+    let large = List.filter (fun y -> y > x ) xs in (*let zamiast and *)
+  quicksort' small @ (x :: quicksort' large);; (*wywalnie in bo nie ma zadnej f zagnieżdzonej*)
+
+
+quicksort' [9;8;7;6;5;3];;
+
+
+(* 3.5 *)
 
 let rec insertion_sort (xs, func) = 
   let rec insert (x, xs) = 
@@ -64,3 +89,11 @@ let rec merge_sort func xs =
     
   
 let result = merge_sort (fun x y -> x > y) [1;2;3;4;5];;
+
+let tupleList = [(1,2);(3,4);(5,6);(7,8);(9,10)];;
+
+let stabilitySort = merge_sort (fun (x1,y1) (x2,y2) -> x1 > x2 && y2 > y1) tupleList;;
+
+
+
+
