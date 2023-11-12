@@ -24,34 +24,48 @@ println(stackDeep)
 
 // 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377
 def fib(x: Int): Int = {
-    x match {
-        case 0 => 0
-        case 1 => 1
-        case _ => fib(x-1) + fib(x-2)
-    }
+  x match {
+    case 0 => 0
+    case 1 => 1
+    case _ => fib(x-1) + fib(x-2)
+  }
+}
+
+def fibAsFunc: Int => Int = {
+  case 0 => 0
+  case 1 => 1
+  case x => fibAsFunc(x - 1) + fibAsFunc(x - 2)
 }
 
 def fibTail(x: Int): Int  = {
-    @tailrec
-    def getFib(x: Int, prev: Int, prevPrev: Int): Int = {
-        x match{
-            case 0 => 0
-            case 1 => prev
-            case _ => getFib(x-1, prev + prevPrev, prev)
-        }
+  @tailrec
+  def getFib(x: Int, prev: Int, prevPrev: Int): Int = {
+    x match{
+      case 0 => 0
+      case 1 => prev
+      case _ => getFib(x-1, prev + prevPrev, prev)
     }
-    getFib(x, 1, 0)
+  }
+  getFib(x, 1, 0)
 }
 
-val list = (0 to 10).toList
-val fibList = list.map(fib)
-val fibTailList = list.map(fibTail)
+def fibAsFuncTail: Int => Int = {
+  @tailrec
+  def getFib(x: Int, prev: Int, prevPrev: Int): Int = {
+    x match{
+      case 0 => 0
+      case 1 => prev
+      case _ => getFib(x-1, prev + prevPrev, prev)
+    }
+  }
+  (x: Int) => getFib(x, 1, 0)
+}
 
-println(fibList==fibTailList)
-
-// val number42thTail = fibTail(42)
+val number42thTail = fibAsFuncTail(42)
 // rekurencja ogonowa jest szybsza, bo nie tworzy nowych klatek na stosie, tylko wykorzystuje te, ktore juz sa
-// val number42thNormal = fib(42)
+val number42thNormal = fibAsFunc(42)
+
+number42thTail == number42thNormal
 
 def root3(a: Double) : Double = {
     @tailrec
@@ -86,14 +100,14 @@ println(root3(27.0))
 println(root3(0.625))
 
 //czy xs jest w ys
+@tailrec
 def initSegment[A](xs: List[A], ys: List[A]): Boolean = {
-    if xs.length > ys.length then false 
-    else{
-        (xs, ys) match{
-            case (Nil, _) => true
-            case (_, Nil) => false
-            case _ => if ys.head == xs.head then initSegment(xs.tail, ys.tail) else false
-        }
+    (xs, ys) match {
+        case (Nil, _) => true
+        case (_, Nil) => false
+        case _ => 
+            if xs.head == ys.head then initSegment(xs.tail, ys.tail)
+            else false
     }
 }
 
