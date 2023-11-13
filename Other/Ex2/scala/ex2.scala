@@ -67,24 +67,29 @@ val number42thNormal = fibAsFunc(42)
 
 number42thTail == number42thNormal
 
-def root3(a: Double) : Double = {
-    @tailrec
-    def calculate(x: Double): Double = {
-        if (Math.abs(x*x*x-a)<=Math.pow(10, -15)*Math.abs(a)) then x
-        else calculate(x+(a/(x*x)-x)/3)
-    }
-    if (a>1) then calculate(a/3)
-    else calculate(a)
+def root3(a: Double): Double = {
+  val precision = Math.pow(10, -15) * Math.abs(a)
+
+  @tailrec
+  def calculate(x: Double): Double = {
+    if Math.abs(x * x * x - a) <= precision then x
+    else calculate(x + (a / (x * x) - x) / 3)
+  }
+
+  if a > 1 then calculate(a / 3)
+  else calculate(a)
 }
 
 def root3asFunc: Double => Double = {
-  @tailrec
-  def calculate(a: Double)(x: Double): Double = {
-    if Math.abs(x * x * x - a) <= Math.pow(10, -15) * Math.abs(a) then x
-    else calculate(a)(x + (a / (x * x) - x) / 3)
-  }
-
   (a: Double) =>
+    val precision = Math.pow(10, -15) * Math.abs(a)
+
+    @tailrec
+    def calculate(a: Double)(x: Double): Double = {
+      if Math.abs(x * x * x - a) <= precision then x
+      else calculate(a)(x + (a / (x * x) - x) / 3)
+    }
+    
     if a > 1 then calculate(a)(x = a / 3)
     else calculate(a)(x = a)
 }
