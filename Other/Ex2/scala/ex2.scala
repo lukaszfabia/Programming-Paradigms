@@ -37,25 +37,26 @@ def fibAsFunc: Int => Int = {
   case x => fibAsFunc(x - 1) + fibAsFunc(x - 2)
 }
 
-def fibTail(x: Int): Int  = {
+def fibTail(x: Int): Int = {
   @tailrec
-  def getFib(x: Int, prev: Int, prevPrev: Int): Int = {
-    x match{
+  def getFib(x: Int, curr: Int, prev: Int): Int = {
+    x match {
       case 0 => 0
       case 1 => prev
-      case _ => getFib(x-1, prev + prevPrev, prev)
+      case _ => getFib(x - 1, curr + prev, curr)
     }
   }
+
   getFib(x, 1, 0)
 }
 
 def fibAsFuncTail: Int => Int = {
   @tailrec
-  def getFib(x: Int, prev: Int, prevPrev: Int): Int = {
+  def getFib(x: Int, curr: Int, prev: Int): Int = {
     x match{
       case 0 => 0
       case 1 => prev
-      case _ => getFib(x-1, prev + prevPrev, prev)
+      case _ => getFib(x-1, curr + prev, curr)
     }
   }
   (x: Int) => getFib(x, 1, 0)
