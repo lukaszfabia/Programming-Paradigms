@@ -124,9 +124,8 @@ println(!initSegment(List('a', 'b', 'c'), List('b', 'c')))
 // o(list.length + 1) - gdy index > list.length
 // o(index + 1) - ogolna zlozonosc
 def replaceNth[A](xs: List[A], index: Int, element: A): List[A] = {
-    (xs, index) match{
-        // case (Nil, _) => Nil  
-        case (Nil, _) => List(element)
+    (xs, index) match{ 
+        case (Nil, _) => Nil // wtedy ma sens bo jesli jest Nil i dowolny z elementem ktory ma zastapic element ktorego nie ma to jest Nil i chuj 
         case (_ :: tail, 0) => element::tail
         case (head :: tail, _) => head :: replaceNth(tail, index-1, element)
     }
@@ -148,4 +147,4 @@ val patternB = List((1, 2), (0, 1))
 val List(_, _, x, _, _) = patternA;
 val List(_, (y, _)) = patternB;
 
-println(x+y==0)
+println(x==0 && y==0);
