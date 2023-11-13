@@ -17,6 +17,9 @@ let curry3WithLukierek f a b c = f (a,b,c);;
 let uncurry3WithoutLukierek = fun f -> fun (a,b,c) -> f a b c;;
 let curry3WithoutLukierek = fun f -> fun a -> fun b -> fun c -> f (a,b,c);;
 
+(* curry ('a -> 'b -> 'c -> 'd) -> 'a * 'b * 'c -> 'd  *)
+(* uncurry ('a * 'b * 'c -> 'd) -> 'a -> 'b -> 'c -> 'd = <fun> *)
+
 (* typy sa takie same, czyli typ dowolny *)
 
 (* 3.3 *)
