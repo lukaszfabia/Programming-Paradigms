@@ -53,7 +53,7 @@ let initSegment (l1,l2) =
 
 let rec replaceNth (list, index, element) =
   match (list, index) with
-  | ([],_) -> []
+  | ([],_) -> [element]
   | (_ :: tail, 0) -> element :: tail
   | (head :: tail, _) -> head :: replaceNth (tail, index - 1, element)
   
