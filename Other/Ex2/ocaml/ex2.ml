@@ -29,13 +29,15 @@ let rec fibTail x =
 
 
 (*ta funkcja jest niepewna i tyle*)
-  let rec root3 a =
-    let rec root3Helper (x) =
-      if abs_float(x**3.0 -. a) <= (10.**(-15.0) *. abs_float(a)) then x
-      else root3Helper (x +. (a/.(x**2.) -. x)/.3.)
-    in
-    if a > 1.0 then root3Helper (a /. 3.0)
-    else root3Helper a
+let rec root3 a =
+ let precsion = (10.**(-15.0) *. abs_float(a)) in
+  let rec root3Helper (x) =
+    if abs_float(x**3.0 -. a) <= precsion then x
+    else root3Helper (x +. (a/.(x**2.) -. x)/.3.)
+  in
+  if a > 1.0 then root3Helper (a /. 3.0)
+  else root3Helper a
+;;
     
   
 
