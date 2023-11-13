@@ -1,8 +1,10 @@
 def composite(n: Int): List[Int] = {
   for {
     element <- List.range(2, n + 1)
-    divider <- 2 to Math.sqrt(element).toInt
-    if element % divider == 0
+    if (for {
+      divisor <- List.range(2, element) if element % divisor == 0
+    } yield divisor) != Nil // sprawdzenei czy lista dzielnikow nie jest pusta jak jest to liczba pierwsza 
   } yield element
 }
-List.range(2, 11).foreach(x => println(composite(x)))
+
+List.range(-1, 11).foreach(x => println(composite(x)))
