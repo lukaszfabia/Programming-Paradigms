@@ -57,9 +57,9 @@ let rec insertion_sort (xs, func) =
     | [] -> [x]
     | y::ys -> if func x y then x::xs else y::(insert (x, ys))
   in
-  match xs with
-  | [] -> []
-  | x::xs -> insert (x, insertion_sort (xs, func));;
+
+  List.fold_left (fun acc x -> insert(x, acc)) [] xs
+;;
 
 insertion_sort ([1;2;3;4;5], (fun x y -> x > y));;
 
