@@ -5,14 +5,16 @@ def sumAndProd(xs: List[Int]): (Int, Int) = xs.foldLeft(0,1)((acc, x)=>(acc._1+x
 println(sumAndProd(List(1,2,3,4,5))==(15,120))
 
 def insertionSort[A](function: (A, A) => Boolean, list: List[A]): List[A] = {
-    def insert(number: A, sortedList: List[A]): List[A] = {
-      sortedList match {
-        case Nil => List(number)
-        case head :: _ if function(number, head) => number :: sortedList // gdy zachodzi to dodajemy liczbe do sortedlist
-        case head :: tail => head :: insert(number, tail) // jak nie to zostaiwamy
-      }
+  def insert(number: A, sortedList: List[A]): List[A] = {
+    sortedList match {
+      case Nil => List(number)
+      case head :: tail =>
+        if function(number, head) then number :: sortedList
+        else head :: insert(number, tail)
     }
-    list.foldLeft(List.empty[A])((acc, head) => insert(head, acc))
+  }
+
+  list.foldLeft(List.empty[A])((acc, head) => insert(head, acc))
 }
 
 println(insertionSort((x: Int, y: Int) => x > y, List(1, 2, 3, 4, 5)))

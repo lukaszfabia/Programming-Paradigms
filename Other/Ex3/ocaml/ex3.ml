@@ -17,6 +17,9 @@ let curry3WithLukierek f a b c = f (a,b,c);;
 let uncurry3WithoutLukierek = fun f -> fun (a,b,c) -> f a b c;;
 let curry3WithoutLukierek = fun f -> fun a -> fun b -> fun c -> f (a,b,c);;
 
+(* curry ('a -> 'b -> 'c -> 'd) -> 'a * 'b * 'c -> 'd  *)
+(* uncurry ('a * 'b * 'c -> 'd) -> 'a -> 'b -> 'c -> 'd = <fun> *)
+
 (* typy sa takie same, czyli typ dowolny *)
 
 (* 3.3 *)
@@ -57,9 +60,9 @@ let rec insertion_sort (xs, func) =
     | [] -> [x]
     | y::ys -> if func x y then x::xs else y::(insert (x, ys))
   in
-  match xs with
-  | [] -> []
-  | x::xs -> insert (x, insertion_sort (xs, func));;
+
+  List.fold_left (fun acc x -> insert(x, acc)) [] xs
+;;
 
 insertion_sort ([1;2;3;4;5], (fun x y -> x > y));;
 

@@ -37,25 +37,26 @@ def fibAsFunc: Int => Int = {
   case x => fibAsFunc(x - 1) + fibAsFunc(x - 2)
 }
 
-def fibTail(x: Int): Int  = {
+def fibTail(x: Int): Int = {
   @tailrec
-  def getFib(x: Int, prev: Int, prevPrev: Int): Int = {
-    x match{
+  def getFib(x: Int, curr: Int, prev: Int): Int = {
+    x match {
       case 0 => 0
       case 1 => prev
-      case _ => getFib(x-1, prev + prevPrev, prev)
+      case _ => getFib(x - 1, curr + prev, curr)
     }
   }
+
   getFib(x, 1, 0)
 }
 
 def fibAsFuncTail: Int => Int = {
   @tailrec
-  def getFib(x: Int, prev: Int, prevPrev: Int): Int = {
+  def getFib(x: Int, curr: Int, prev: Int): Int = {
     x match{
       case 0 => 0
       case 1 => prev
-      case _ => getFib(x-1, prev + prevPrev, prev)
+      case _ => getFib(x-1, curr + prev, curr)
     }
   }
   (x: Int) => getFib(x, 1, 0)
@@ -67,24 +68,29 @@ val number42thNormal = fibAsFunc(42)
 
 number42thTail == number42thNormal
 
-def root3(a: Double) : Double = {
-    @tailrec
-    def calculate(x: Double): Double = {
-        if (Math.abs(x*x*x-a)<=Math.pow(10, -15)*Math.abs(a)) then x
-        else calculate(x+(a/(x*x)-x)/3)
-    }
-    if (a>1) then calculate(a/3)
-    else calculate(a)
+def root3(a: Double): Double = {
+  val precision = Math.pow(10, -15) * Math.abs(a)
+
+  @tailrec
+  def calculate(x: Double): Double = {
+    if Math.abs(x * x * x - a) <= precision then x
+    else calculate(x + (a / (x * x) - x) / 3)
+  }
+
+  if a > 1 then calculate(a / 3)
+  else calculate(a)
 }
 
 def root3asFunc: Double => Double = {
-  @tailrec
-  def calculate(a: Double)(x: Double): Double = {
-    if Math.abs(x * x * x - a) <= Math.pow(10, -15) * Math.abs(a) then x
-    else calculate(a)(x + (a / (x * x) - x) / 3)
-  }
-
   (a: Double) =>
+    val precision = Math.pow(10, -15) * Math.abs(a)
+
+    @tailrec
+    def calculate(a: Double)(x: Double): Double = {
+      if Math.abs(x * x * x - a) <= precision then x
+      else calculate(a)(x + (a / (x * x) - x) / 3)
+    }
+    
     if a > 1 then calculate(a)(x = a / 3)
     else calculate(a)(x = a)
 }
@@ -118,9 +124,8 @@ println(!initSegment(List('a', 'b', 'c'), List('b', 'c')))
 // o(list.length + 1) - gdy index > list.length
 // o(index + 1) - ogolna zlozonosc
 def replaceNth[A](xs: List[A], index: Int, element: A): List[A] = {
-    (xs, index) match{
-        // case (Nil, _) => Nil  
-        case (Nil, _) => List(element)
+    (xs, index) match{ 
+        case (Nil, _) => Nil // wtedy ma sens bo jesli jest Nil i dowolny z elementem ktory ma zastapic element ktorego nie ma to jest Nil i chuj 
         case (_ :: tail, 0) => element::tail
         case (head :: tail, _) => head :: replaceNth(tail, index-1, element)
     }
@@ -142,4 +147,4 @@ val patternB = List((1, 2), (0, 1))
 val List(_, _, x, _, _) = patternA;
 val List(_, (y, _)) = patternB;
 
-println(x+y==0)
+println(x==0 && y==0);
