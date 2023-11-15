@@ -50,6 +50,79 @@ let rec (/) list divisior =
   aux list []
  ;;
  
- let test7 = getDuplicates [1; 2; 3; 2; 4; 1; 5; 3];;
+let test7 = getDuplicates [1; 2; 3; 2; 4; 1; 5; 3];;
  
- 
+let move list index =
+  let rec split list index = 
+    match list, index with
+    | [], _ -> [], []
+    | head :: tail, 0 -> [], tail
+    | head :: tail, index -> 
+      let part1, part2 = split tail (index - 1) in head :: part1, part2
+  in
+  
+  let part1, part2 = split list index in 
+  part2 @ part1
+;;
+
+
+let test8 = move [1;2;3;4;5;6] 2 ;;
+
+let removeNth list n = 
+  let aux list index = 
+    match list, index with
+    | [], _ -> []
+    | head :: tail, 0 -> aux tail n
+    | head :: tail, _ -> head :: aux tail (index - 1)
+  in 
+  aux list n
+;;
+
+let test9 = removeNth [1;2;3;4;5] 2;;
+    
+
+let change_elements list = 
+  let is_even fun f x = x mod 2 = 0 in 
+
+  let rec take_lists list = 
+    match list with
+    | [] -> [], []
+    | head :: tail -> 
+      let part1, part2 = take_lists tail in 
+      if is_even head then head :: part1, part2 
+      else part1, head :: part2
+  in
+
+  let rec build_lists even odd = 
+    match even, odd with
+    | [], _ | _, [] -> []
+    | head1 :: tail1, head2 :: tail2 -> head2 :: head1 :: build_lists tail1 tail2
+  in
+
+  let even, odd = take_lists list in 
+  build_lists even odd
+;;
+
+let test10 = change_elements [1;2;3;4;5;6] ;; 
+
+
+let take_identity list1 list2 = 
+  let rec count lst1 lst2 acc = 
+    match lst1, lst2 with
+    | [], _ | _, [] -> acc
+    | h1 :: t1, h2 :: t2 -> 
+      if h1 = h2 then count t1 t2 (acc+1)
+      else count t1 t2 acc
+  in
+  count list1 list2 0
+;;
+
+
+let test11 = take_identity [1;2;3;4;5] [1;0;3;0;5] ;; 
+
+let power_sum list = 
+  List.fold_left (fun acc x -> acc + x * x) 0 list
+;;
+
+let test12 = power_sum [1;2;3;4;5] ;;
+    
