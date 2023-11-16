@@ -1,5 +1,5 @@
 def composite(n: Int): List[Int] = {
-  def divisorList(element: Int): List[Int] = {
+  def getDivisors(element: Int): List[Int] = {
     for {
       divisor <- List.range(2, Math.sqrt(element).toInt + 1) if element % divisor == 0
     } yield divisor
@@ -7,7 +7,7 @@ def composite(n: Int): List[Int] = {
 
   for {
     element <- List.range(2, n + 1)
-    if divisorList(element) != Nil // sprawdzenei czy lista dzielnikow nie jest pusta jak jest to liczba pierwsza
+    if getDivisors(element) != Nil // sprawdzenei czy lista dzielnikow nie jest pusta jak jest to liczba pierwsza
   } yield element
 }
 
@@ -19,4 +19,4 @@ def printRangeLists(begin : Int, end : Int): Unit = {
   }
 }
 
-printRangeLists(1, 20)
+printRangeLists(-19, 20)
