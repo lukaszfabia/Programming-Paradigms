@@ -110,7 +110,7 @@ def takeOnlyBelowThanMean(list: List[Int]): List[Int] = {
 
 takeOnlyBelowThanMean(List(1, 2, 3, 4, 2, 6))
 
-def map[A](f: A => A)(list: List[A]): List[A] = {
+def map[A, B](f: A => B)(list: List[A]): List[B] = {
   list match
     case head :: tail => f(head) :: map(f)(tail)
     case _ => Nil
