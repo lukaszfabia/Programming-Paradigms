@@ -4,10 +4,8 @@ import scala.annotation.tailrec
 type Point = (Float, Float)
 
 def distance(p1: Point, p2: Point): Float = {
-  val (x1, y1) = p1
-  val (x2, y2) = p2
-  val dx = x1 - x2
-  val dy = y1 - y2
+  val dx = p1._1 - p2._1
+  val dy = p1._2 - p2._2
   math.sqrt(dx * dx + dy * dy).toFloat
 }
 
@@ -110,7 +108,17 @@ def getNextDay(day: WeekDay): WeekDay = {
   }
 }
 
-val toStr: WeekDay => String = _.toString
+def toStr(day: WeekDay): String = {
+  day match {
+    case Monday => "poniedzialek"
+    case Tuesday => "wtorek"
+    case Wednesday => "sroda"
+    case Thursday => "czwartek"
+    case Friday => "piatek"
+    case Saturday => "sobota"
+    case Sunday => "niedziela"
+  }
+}
 
 print("ona jest " + toStr(getNextDay(getNextDay(Monday))))
 
@@ -128,3 +136,27 @@ def safeHead[A](list: List[A]): Maybe[A] = {
 }
 
 safeHead(Nil)
+
+sealed trait SolidFigure {
+  def volume: Float
+}
+
+case class Cuboid(a: Float, b: Float, c: Float) extends SolidFigure {
+  override def volume: Float = a * b * c
+}
+
+case class Sphere(r: Float) extends SolidFigure {
+  override def volume: Float = 4f / 3f * math.Pi.toFloat * r * r * r
+}
+
+case class Cylinder(r: Float, h: Float) extends SolidFigure {
+  override def volume: Float = math.Pi.toFloat * r * r * h
+}
+
+case class Cone(r: Float, h: Float) extends SolidFigure {
+  override def volume: Float = 1f / 3f * math.Pi.toFloat * r * r * h
+}
+
+
+val sphere = Sphere(2f).volume
+val cylinder = Cylinder(2f, 2f).volume
