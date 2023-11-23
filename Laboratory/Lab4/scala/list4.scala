@@ -131,32 +131,45 @@ case class Nothing[A]() extends Maybe[A]
 def safeHead[A](list: List[A]): Maybe[A] = {
   list match {
     case Nil => Nothing()
-    case x :: _ => Just(x)
+    case head :: _ => Just(head)
   }
 }
 
 safeHead(Nil)
 
 sealed trait SolidFigure {
-  def volume: Float
+  def volume: Double
 }
 
-case class Cuboid(a: Float, b: Float, c: Float) extends SolidFigure {
-  override def volume: Float = a * b * c
+case class Cuboid(a: Double, b: Double, c: Double) extends SolidFigure {
+  override def volume: Double = a * b * c
 }
 
-case class Sphere(r: Float) extends SolidFigure {
-  override def volume: Float = 4f / 3f * math.Pi.toFloat * r * r * r
+case class Sphere(r: Double) extends SolidFigure {
+  override def volume: Double = 4d / 3d * math.Pi.toDouble * r * r * r
 }
 
-case class Cylinder(r: Float, h: Float) extends SolidFigure {
-  override def volume: Float = math.Pi.toFloat * r * r * h
+case class Cylinder(r: Double, h: Double) extends SolidFigure {
+  override def volume: Double = math.Pi.toDouble * r * r * h
 }
 
-case class Cone(r: Float, h: Float) extends SolidFigure {
-  override def volume: Float = 1f / 3f * math.Pi.toFloat * r * r * h
+case class Cone(r: Double, h: Double) extends SolidFigure {
+  override def volume: Double = 1d / 3d * Cylinder(r, h).volume
 }
 
 
 val sphere = Sphere(2f).volume
 val cylinder = Cylinder(2f, 2f).volume
+
+// inna implementacja gdyby trait SolidFigure nie miał metody volume
+//def getVolume(solidFigure: SolidFigure): Double = {
+//  solidFigure match {
+//    case Cuboid(a, b, c) => a * b * c
+//    case Sphere(r) => 4f / 3f * math.Pi.toDouble * r * r * r
+//    case Cylinder(r, h) => math.Pi.toDouble * r * r * h
+//    case Cone(r, h) => 1f / 3f * math.Pi.toDouble * r * r * h
+//  }
+//}
+//
+//getVolume(Cylinder(2f, 2f)) == Cylinder(2f, 2f).volume
+

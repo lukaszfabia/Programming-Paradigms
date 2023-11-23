@@ -4,7 +4,7 @@ type point = float * float;;
 
 (* kod z dokumentacji  *)
 let distance ((x1, y1) : point) ((x2, y2) : point) : float =
-  Float.sqrt ((x1 -. x2) ** 2. +. (y1 -. y2) ** 2.)
+  sqrt ((x1 -. x2) ** 2. +. (y1 -. y2) ** 2.)
 ;;
 
 
@@ -47,12 +47,12 @@ let get_younger (p1, p2) =
   if age1 < age2 then p1 else p2
 ;;
 
-let p: partnership = (lukasz, adam) ;;
+let p: partnership = (lukasz, fabia) ;;
 let younger = get_younger p ;;
 
 (* zadanie 2b *)
 
-type Person = {
+(* type Person = {
   name : string;
   lastname : string;
   age : int;
@@ -73,7 +73,7 @@ let me = {name = "Lukasz"; lastname = ""; age = 20; sex = 'm'; kicks_size = 43.0
 let you = {name = "!Luksz"; lastname = "!Fabia"; age = 80; sex = 'f'; kicks_size = 57.5};;
 
 let p: Partnership = {p1 = me; p2 = you};;
-let younger = get_younger p ;;
+let younger = get_younger p ;; *)
 
 
 (* zadanie 3 *)
@@ -111,7 +111,7 @@ type 'a maybe =
   | Just of 'a
   | Nothing
 
-let safeHead (list : 'a list) : 'a maybe =
+let safeHead (list : 'a list) : 'a maybe = 
   match list with
   | [] -> Nothing
   | x :: _ -> Just(x)
@@ -121,7 +121,7 @@ let safeHeadResult = safeHead [1; 2; 3];;
 
 
 (* zadanie 5 *)
-(* type solid_figure = 
+type solid_figure = 
   | Sphere of float
   | Cuboid of float * float * float
   | Cylinder of float * float
@@ -137,8 +137,7 @@ let volume (figure : solid_figure) : float =
   | Cone(r, h) -> (1.0 /. 3.0) *. Float.pi *. r *. r *. h
 ;;
 
-let sphere = (Sphere(2.0).volume);;
-let cuboid = volume (Cuboid(2.0, 3.0, 4.0));; *)
+let cuboid = volume (Cuboid(2.0, 3.0, 4.0));;
 
 
 
