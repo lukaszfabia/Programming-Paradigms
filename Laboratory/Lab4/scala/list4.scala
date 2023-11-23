@@ -4,10 +4,8 @@ import scala.annotation.tailrec
 type Point = (Float, Float)
 
 def distance(p1: Point, p2: Point): Float = {
-  val (x1, y1) = p1
-  val (x2, y2) = p2
-  val dx = x1 - x2
-  val dy = y1 - y2
+  val dx = p1._1 - p2._1
+  val dy = p1._2 - p2._2
   math.sqrt(dx * dx + dy * dy).toFloat
 }
 
@@ -110,7 +108,17 @@ def getNextDay(day: WeekDay): WeekDay = {
   }
 }
 
-val toStr: WeekDay => String = _.toString
+def toStr(day: WeekDay): String = {
+  day match {
+    case Monday => "poniedzialek"
+    case Tuesday => "wtorek"
+    case Wednesday => "sroda"
+    case Thursday => "czwartek"
+    case Friday => "piatek"
+    case Saturday => "sobota"
+    case Sunday => "niedziela"
+  }
+}
 
 print("ona jest " + toStr(getNextDay(getNextDay(Monday))))
 
@@ -123,8 +131,45 @@ case class Nothing[A]() extends Maybe[A]
 def safeHead[A](list: List[A]): Maybe[A] = {
   list match {
     case Nil => Nothing()
-    case x :: _ => Just(x)
+    case head :: _ => Just(head)
   }
 }
 
 safeHead(Nil)
+
+sealed trait SolidFigure {
+  def volume: Double
+}
+
+case class Cuboid(a: Double, b: Double, c: Double) extends SolidFigure {
+  override def volume: Double = a * b * c
+}
+
+case class Sphere(r: Double) extends SolidFigure {
+  override def volume: Double = 4d / 3d * math.Pi.toDouble * r * r * r
+}
+
+case class Cylinder(r: Double, h: Double) extends SolidFigure {
+  override def volume: Double = math.Pi.toDouble * r * r * h
+}
+
+case class Cone(r: Double, h: Double) extends SolidFigure {
+  override def volume: Double = 1d / 3d * Cylinder(r, h).volume
+}
+
+
+val sphere = Sphere(2f).volume
+val cylinder = Cylinder(2f, 2f).volume
+
+// inna implementacja gdyby trait SolidFigure nie miał metody volume
+//def getVolume(solidFigure: SolidFigure): Double = {
+//  solidFigure match {
+//    case Cuboid(a, b, c) => a * b * c
+//    case Sphere(r) => 4f / 3f * math.Pi.toDouble * r * r * r
+//    case Cylinder(r, h) => math.Pi.toDouble * r * r * h
+//    case Cone(r, h) => 1f / 3f * math.Pi.toDouble * r * r * h
+//  }
+//}
+//
+//getVolume(Cylinder(2f, 2f)) == Cylinder(2f, 2f).volume
+
