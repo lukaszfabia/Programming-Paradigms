@@ -114,7 +114,7 @@ type 'a maybe =
 let safeHead (list : 'a list) : 'a maybe = 
   match list with
   | [] -> Nothing
-  | x :: _ -> Just(x)
+  | head :: _ -> Just(head)
 ;;
 
 let safeHeadResult = safeHead [1; 2; 3];;
