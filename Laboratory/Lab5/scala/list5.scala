@@ -96,6 +96,11 @@ println("first " + calls)
 calls = 0
 println(memoizedFib(5))
 println(calls==0)
+println(memoizedFib(6))
+println("first " + calls)
+calls = 0
+println(memoizedFib(6))
+println(calls==0)
 
 
 // zadanie 3 
