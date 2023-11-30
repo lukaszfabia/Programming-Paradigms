@@ -126,3 +126,43 @@ let power_sum list =
 
 let test12 = power_sum [1;2;3;4;5] ;;
     
+
+type 'a llist = LNil | LCons of 'a * 'a llist Lazy.t;;
+
+let rec ltake = function
+      (0, _) -> []
+    | (_, LNil) -> []
+    | (n, LCons(x,lazy xs)) -> x::ltake(n-1,xs)
+;;
+
+
+type 'a lazy_bt = LEmpty | LNode of 'a * (unit -> 'a lazy_bt) * (unit -> 'a lazy_bt);;
+
+let t =
+  LNode (1, 
+         (fun () -> LNode (2, (fun () -> LEmpty), (fun () -> LNode(3, (fun() -> LEmpty), (fun() -> LEmpty))))),
+         (fun () -> LEmpty)
+        )
+
+
+let rec lazy_tree_map : ('a -> 'b) -> 'a lazy_bt -> 'b lazy_bt =
+  fun f tree ->
+    match tree with
+    | LEmpty -> LEmpty
+    | LNode (value, left, right) ->
+        let map_left () = lazy_tree_map f (left ()) in
+        let map_right () = lazy_tree_map f (right ()) in
+        LNode (f value, map_left, map_right)
+;;
+
+let lBreadth ltree =
+  let rec breadthHelper = function
+      [] -> LNil
+      | LEmpty::t -> breadthHelper t
+      | LNode(v, l, r)::t -> LCons(v, lazy (breadthHelper(t @ [l() ; r()])))
+    in breadthHelper [ltree];;
+
+
+let new_tree = lazy_tree_map (fun x -> x * x * x) t;;
+
+ltake(3, lBreadth new_tree);;
