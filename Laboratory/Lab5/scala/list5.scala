@@ -3,7 +3,7 @@ import java.util
 var calls = 0
 def stirling(n: Int, m: Int): Int = {
   calls += 1
-  if n < m then throw new IllegalArgumentException("n < m")
+  if n < m || n < 0 || m < 0 then throw new IllegalArgumentException("n < m or they are negative")
   (n, m) match {
     case (0, 0) => 1
     case (n, 0) => 0
@@ -13,17 +13,18 @@ def stirling(n: Int, m: Int): Int = {
       else stirling(n - 1, m - 1) + m * stirling(n - 1, m)
   }
 }
-
-//println(stirling(0, 0)) // Expected output: 1
+println(stirling(-1, 10)) // Exceptions
+println(stirling(-1, -10)) // Exceptions
+println(stirling(0, 0)) // Expected output: 1
 println(stirling(5, 2)) // Expected output: 15
 println(calls)
 calls = 0
 println(stirling(10, 5)) // Expected output: 42525
 println(calls)
 //
-//println(stirling(3, 3)) // Expected output: 1
+println(stirling(3, 3)) // Expected output: 1
 //
-//println(stirling(6, 0)) // Expected output: 0
+println(stirling(6, 0)) // Expected output: 0
 
 def memoized_stirling(n: Int, m: Int): Int = {
   // mozna uzyc ew HashMap
@@ -31,7 +32,7 @@ def memoized_stirling(n: Int, m: Int): Int = {
 
   def aux(n: Int, m: Int): Int = {
     calls += 1
-    if n < m then throw new IllegalArgumentException("n < m")
+    if n < m || n < 0 || m < 0 then throw new IllegalArgumentException("n < m or they are negative")
     (n, m) match {
       case (0, 0) => 1
       case (n, 0) => 0
@@ -65,16 +66,16 @@ println(calls)
 //println(memoized_stirling(3, 3)) // Expected output: 1
 
 
-// zadanie 2 
+// zadanie 2
 
-def make_memoize[A, B](func: A => B): A => B = {
+def make_memoize[A, B](fun: A => B): A => B = {
   val cache = new util.Hashtable[A, B]()
 
-  (a: A) => {
-    if cache.containsKey(a) then cache.get(a)
+  (argument: A) => {
+    if cache.containsKey(argument) then cache.get(argument)
     else {
-      val value = func(a)
-      cache.put(a, value)
+      val value = fun(argument)
+      cache.put(argument, value)
       value
     }
   }
@@ -103,7 +104,7 @@ println(memoizedFib(6))
 println(calls==0)
 
 
-// zadanie 3 
+// zadanie 3
 
 lazy val lazyFactorial = stirling(10, 5)
 val tryhardFactorial = stirling(10, 5) // w tym przypadku nie ma znaczenia czy my to wywolamy czy nie obliczby wartosc i przypisze do val tryhardFactorial
@@ -116,3 +117,4 @@ for i <- 1 to 10 do
 // lazyFactorial to nie bedziemy jej obliczac,
 // czyli my w sumie robimy rezerwacje pamieci i z funkcji zczytujemy jaki typ bedzie zwracany
 
+val x = lazyFactorial
