@@ -54,3 +54,23 @@ let fib() : int llist =
 ;;
 
 let result = ltake(10, fib());;
+
+
+type 'a lBT = LEmpty | LNode of 'a * (unit -> 'a lBT) * (unit -> 'a lBT)
+
+let l_breadth tree = 
+  let rec aux = function
+  [] -> LNil
+  | LEmpty :: tail -> aux tail
+  | LNode(elem, left, right) :: tail -> LCons(elem, fun() -> aux (tail @ [left(); right()]))
+in
+aux [tree]
+;;
+
+let rec l_tree x = LNode(x, (fun()-> l_tree(2*x)), (fun()->l_tree(2*x+1)));;
+
+
+let res3 = ltake(10, l_breadth(l_tree 4));;
+
+
+(* zadanie 3 *)
