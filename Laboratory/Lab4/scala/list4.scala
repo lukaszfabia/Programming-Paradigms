@@ -76,8 +76,6 @@ val person2 = Person("Anna", "Nowak", 23, "F", 38f)
 val partnership = Partnership(person1, person2)
 partnership.getYounger
 
-enum Day:
-  case Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
 
 sealed trait WeekDay
 
