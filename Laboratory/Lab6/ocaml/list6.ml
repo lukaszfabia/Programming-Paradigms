@@ -30,7 +30,7 @@ let res = tree_fold_right (fun value acc -> value :: acc) [] my_tree;;
 
 res = inorder my_tree;;
 
-type 'a lazy_tree = Empty | Node of 'a * 'a lazy_tree Lazy.t * 'a lazy_tree Lazy.t
+(* type 'a lazy_tree = Empty | Node of 'a * 'a lazy_tree Lazy.t * 'a lazy_tree Lazy.t
 
 let rec fold_left op acc = function
 | Empty -> acc
@@ -46,4 +46,4 @@ let my_tree =
   ))
 ;;
 
-let inorder = fold_left (fun acc value -> value :: acc) [] (Lazy.force my_tree);;
+let inorder = fold_left (fun acc value -> value :: acc) [] (Lazy.force my_tree);; *)
