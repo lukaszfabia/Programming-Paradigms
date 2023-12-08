@@ -127,15 +127,18 @@ let power_sum list =
 let test12 = power_sum [1;2;3;4;5] ;;
     
 
+
+(* z wykladu *)
 type 'a llist = LNil | LCons of 'a * 'a llist Lazy.t;;
 
+(* z wykladu *)
 let rec ltake = function
       (0, _) -> []
     | (_, LNil) -> []
     | (n, LCons(x,lazy xs)) -> x::ltake(n-1,xs)
 ;;
 
-
+(* z listy 5 z cw *)
 type 'a lazy_bt = LEmpty | LNode of 'a * (unit -> 'a lazy_bt) * (unit -> 'a lazy_bt);;
 
 let t =
@@ -144,17 +147,17 @@ let t =
          (fun () -> LEmpty)
         )
 
-
-let rec lazy_tree_map : ('a -> 'b) -> 'a lazy_bt -> 'b lazy_bt =
-  fun f tree ->
-    match tree with
-    | LEmpty -> LEmpty
-    | LNode (value, left, right) ->
-        let map_left () = lazy_tree_map f (left ()) in
-        let map_right () = lazy_tree_map f (right ()) in
-        LNode (f value, map_left, map_right)
+let rec lazy_tree_map f tree = 
+  match tree with 
+  | LEmpty -> LEmpty
+  | LNode (value, left, right) -> 
+    let helper_left = fun () -> lazy_tree_map f (left ()) in
+    let helper_right = fun () -> lazy_tree_map f (right ()) in
+    LNode (f value, helper_left, helper_right)
 ;;
+        
 
+(* z wykladu  *)
 let lBreadth ltree =
   let rec breadthHelper = function
       [] -> LNil

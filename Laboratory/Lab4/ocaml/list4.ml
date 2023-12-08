@@ -137,7 +137,7 @@ let volume (figure : solid_figure) : float =
   | Cone(r, h) -> (1.0 /. 3.0) *. Float.pi *. r *. r *. h
 ;;
 
-let cuboid = volume (Cuboid(2.0, 3.0, 4.0));;
+volume (Cuboid(2.0, 3.0, 4.0));;
 
 
 

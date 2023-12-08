@@ -30,14 +30,14 @@ case object LEmpty extends lBT[Nothing]
 case class LNode[+A](elem: A, left: () => lBT[A], right: () => lBT[A]) extends lBT[A]
 
 def lBreadth[A](tree: lBT[A]): LazyList[A] = {
-  def aux(queue: LazyList[lBT[A]]): LazyList[A] = {
+  def aux(queue: List[lBT[A]]): LazyList[A] = {
     queue match
-      case LazyList() => LazyList()
-      case LEmpty #:: tail => aux(tail)
-      case LNode(elem, left, right) #:: tail => elem #:: aux(tail ++ left() #:: right() #:: LazyList())
+      case Nil => LazyList()
+      case LEmpty :: tail => aux(tail)
+      case LNode(elem, left, right) :: tail => elem #:: aux(tail ::: List(left(), right()))
   }
 
-  aux(LazyList(tree))
+  aux(List(tree))
 }
 
 def lTree(x: Int): lBT[Int] = {
