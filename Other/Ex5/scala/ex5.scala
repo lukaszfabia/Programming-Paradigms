@@ -9,6 +9,7 @@ def repeat[A](n: Int)(list: LazyList[A]): LazyList[A] = {
   aux(n)(list)
 }
 
+repeat(3)(LazyList.from(1).take(4)).toList
 
 def fib(): LazyList[Int] = {
   def aux(a: Int, b: Int): LazyList[Int] = {
@@ -18,7 +19,6 @@ def fib(): LazyList[Int] = {
   aux(0, 1)
 }
 
-repeat(3)(LazyList(1, 2, 3)).toList
 
 fib().take(10).toList
 
