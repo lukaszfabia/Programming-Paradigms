@@ -72,5 +72,3 @@ let rec l_tree x = LNode(x, (fun()-> l_tree(2*x)), (fun()->l_tree(2*x+1)));;
 
 let res3 = ltake(10, l_breadth(l_tree 4));;
 
-
-(* zadanie 3 *)
