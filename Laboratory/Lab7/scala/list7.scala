@@ -7,20 +7,26 @@ def modifiedPascalF(n: Int): Option[List[Int]] = {
   def aux(k: Int): List[Int] = k match
     case 0 => List(1)
     case _ =>
-      val helper = aux(k - 1)
-      if k % 2 == 0 then 1 :: append(_ + _, helper, helper.tail)
-      else 1 :: append(_ - _, helper, helper.tail)
+      val helper = aux(k - 1) // zejscie do pierwszego wiersza
+      k % 2 match 
+        case 0 => 1 :: append(_ + _, helper, helper.tail)
+        case _ => 1 :: append(_ - _, helper, helper.tail)
+      
+
+
+  //      val helper = aux(k - 1)
+  //      if k % 2 == 0 then 1 :: append(_ + _, helper, helper.tail)
+  //      else 1 :: append(_ - _, helper, helper.tail)
 
   if n < 0 then None
   else Some(aux(n))
 }
 
-
 def modifiedPascalI(n: Int): Array[Int] = {
   var result = Array.fill(n + 1)(1)
   var curr: Array[Int] = null
-  var i = 1
-  var j: Int = 0
+  var i = 0
+  var j = 0
   while i <= n do
     curr = Array.fill(i + 1)(0)
     curr(0) = 1
