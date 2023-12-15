@@ -17,10 +17,11 @@ public class Aliases {
 
         // takie przejscie po tablicy pozwala na zmiane wartosci
         for (int i = 0; i < ints2.length; i++) {
-            System.out.println(ints2[i]);
             ints2[i] = -1;
         }
-
+        
+        // ustawienie []ints2 elementow na -1 spowoduje zmiane elementow dla ints poniewaz
+        // ints i ints2 wskazuja na ten sam obszar pamieci 
         for (int i : ints) {
             System.out.println(i);
         }
