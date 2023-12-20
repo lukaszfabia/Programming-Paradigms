@@ -11,9 +11,9 @@ module type Memory = sig
   val clear : 'a t -> unit
 end
 
-
+(*modul arr sam w sobie jest juz mutowalny*)
 module Array_memory : Memory = struct
-  type 'a t = { mutable arr : 'a option array; mutable size: int };;
+  type 'a t = { arr : 'a option array; size: int };;
 
   exception Alloc_error of string;;
 
@@ -27,10 +27,7 @@ module Array_memory : Memory = struct
 
   let get memory i =
     if i >= memory.size then raise (Alloc_error "no such a index")
-    else 
-    match memory.arr.(i) with
-    | None -> None
-    | Some v -> Some v
+    else memory.arr.(i)
   ;;
 
   let set memory i v = 
@@ -84,6 +81,7 @@ Array_memory.dump mem;;
 Array_memory.set mem 0 100;;
 Array_memory.dump mem;;
 Array_memory.get mem 2;;
+Array_memory.get mem 0;;
 Array_memory.free mem;;
 Array_memory.clear mem;;
 Array_memory.dump mem;;
@@ -92,9 +90,9 @@ Array_memory.size mem;;
 (* module Nazwa1 (Nazwa2 : sygnatura) = struktura *)
 
 type instruction = Load of int * int | Add of int * int * int | Sub of int * int * int;;
-
+(*lista w ocaml nie jest domyslnie mutowalna*)
 module RAM_Machine (Mem : Memory) = struct
-  type rep = {mutable mem : int Mem.t; mutable instructions : instruction list }
+  type rep = { mem : int Mem.t; mutable instructions : instruction list }
 
   let init size instructions = { mem = Mem.init size; instructions }
 
@@ -129,13 +127,18 @@ module RAM_Machine (Mem : Memory) = struct
           end
         else ()
     in
+    
+    (* let rec process = function 
+    | [] -> ()
+    | head :: tail -> execute head; process tail
+    in *)
+    match memory.instructions with
+    | [] -> () 
+    | instr :: rest ->
+      execute instr;
+      memory.instructions <- rest
+    ;;
 
-    let rec process = function 
-      | [] -> ()
-      | head :: tail -> execute head; process tail
-    in
-
-    process memory.instructions;;
 
   let free memory = Mem.free memory.mem;;
 
@@ -152,5 +155,6 @@ Machine.clear !ram;;
 Machine.dump !ram;;
 
 ram := (Machine.init 4 [Load (0, 123); Load(1, 341); Load(2, -343); Load(3, 301); Add(0, 1, 2)]);;
+Machine.step !ram;;
 Machine.step !ram;;
 Machine.dump !ram;;
