@@ -1,3 +1,6 @@
+(* modyfikacja procz nowego modulu module List_memory zawiera poprawki z poprzedniego zadania no i sa to w  
+w glowniej mierze poprawki dla typu w module Array_memory, same poprawki troche poprawiaja kod *)
+
 module type Memory = sig
   type 'a t
   exception Alloc_error of string 
@@ -7,15 +10,16 @@ module type Memory = sig
   val get : 'a t -> int -> 'a option
   val set : 'a t -> int -> 'a -> unit
   val dump : 'a t -> 'a option list
-  (*funckje zrobione dla zabawy*)
-  val size : 'a t -> int
-  val free : 'a t -> int
-  val clear : 'a t -> unit
+  (*my functions*)
+  val size : 'a t -> int (* returns size of memory*)
+  val free : 'a t -> int (* returns amount of free ceils *)
+  val clear : 'a t -> unit (* sets none on entire size *)
 end
 
 (*modul arr sam w sobie jest juz mutowalny*)
 module Array_memory : Memory = struct
-  type 'a t = { arr : 'a option array; size: int };;
+  (* type 'a t = { arr : 'a option array; size: int };; *)
+  type 'a t = 'a option array;;
 
   exception Alloc_error of string;;
 
@@ -25,56 +29,113 @@ module Array_memory : Memory = struct
 
   let default_size = 1;;
 
-  let init n = 
-    if n <= 0 then {arr = Array.make default_size None; size = default_size}
-    else {arr = Array.make n None; size = n}
+  let init n =
+    if n < 0 then Array.make default_size None
+    else Array.make n None
   ;;
   
   let get memory i =
-    if i >= memory.size || i < 0 then raise (IndexOutOfBound "no such a index")
-    else memory.arr.(i)
+    if i >= Array.length memory || i < 0 then raise (IndexOutOfBound "no such a index")
+    else memory.(i)
   ;;
 
   let set memory i v = 
-    if i>= memory.size || i < 0  then raise (IndexOutOfBound "no such a index") 
-    else memory.arr.(i) <- Some v
+    if i >= Array.length memory || i < 0 then raise (IndexOutOfBound "no such a index")
+    else memory.(i) <- Some v
   ;;
 
   let dump memory =
     let rec loop i n =
       if i < n then
-        memory.arr.(i) :: loop (i + 1) n
+        memory.(i) :: loop (i + 1) n
       else
         []
     in
-    loop 0 (memory.size)
+    loop 0 (Array.length memory)
   ;;
 
-  let size memory = memory.size;;
+  let size memory = Array.length memory;;
 
   let free memory = 
     let rec loop i n =
       if i < n then
-        match memory.arr.(i) with
+        match memory.(i) with
         | None -> 1 + loop (i + 1) n
         | Some v -> loop (i + 1) n
       else
         0
     in
-    loop 0 (memory.size)
+    loop 0 (Array.length memory)
   ;;
 
   let clear memory = 
     let rec loop i n = 
       if i < n then 
-      match memory.arr.(i) with
-      | Some(v) -> memory.arr.(i) <- None; loop (i + 1) n
+      match memory.(i) with
+      | Some(v) -> memory.(i) <- None; loop (i + 1) n
       | None -> loop (i + 1) n
       else ()
     in
-    loop 0 (memory.size)
+    loop 0 (Array.length memory)
   ;;
 
+end
+
+module List_memory: Memory = struct
+  type 'a t = 'a option list ref ;;
+
+  exception Alloc_error of string;;
+
+  exception IndexOutOfBound of string;;
+
+  exception DivBy0 of string;;
+
+  let init size = 
+    let rec loop i n = 
+      if i < n then None :: loop (i + 1) n
+      else []
+    in
+  ref (loop 0 size)
+  ;;
+
+  let get memory i = 
+    let rec loop lst i = match lst with
+      | [] -> None
+      | head :: tail -> if i = 0 then head else loop tail (i - 1)
+    in
+    if i < 0 then raise (IndexOutOfBound "no such a index")
+    else loop !memory i
+
+  let set memory i v = 
+    let rec loop lst i = match lst with
+      | [] -> []
+      | head :: tail -> if i = 0 then (Some v) :: tail else head :: loop tail (i - 1)
+    in
+    if i < 0 then raise (IndexOutOfBound "no such a index")
+    else memory := loop !memory i
+  ;;
+
+  let dump memory = !memory;;
+
+  let size memory = List.length !memory;;
+
+  let free memory = 
+    let rec loop lst = match lst with
+      | [] -> 0
+      | head :: tail -> match head with
+        | None -> 1 + loop tail
+        | Some v -> loop tail
+    in
+    loop !memory
+  ;;
+
+  let clear memory = 
+    let rec loop lst = match lst with
+      | [] -> []
+      | head :: tail -> None :: loop tail
+    in
+    memory := loop !memory
+  ;;
 end
 
 
@@ -92,7 +153,7 @@ Array_memory.clear mem;;
 Array_memory.dump mem;;
 Array_memory.size mem;;
 
-(* module Nazwa1 (Nazwa2 : sygnatura) = struktura *)
+
 type compression = int->int->int;;
 
 type instruction = 
@@ -107,7 +168,7 @@ Load of int * int (* loads value to given address*)
 
 (*lista w ocaml nie jest domyslnie mutowalna*)
 module RAM_Machine (Mem : Memory) = struct
-  type rep = { mem : int Mem.t; mutable instructions : instruction list };;
+  type t = { mem : int Mem.t; mutable instructions : instruction list };;
 
   let init size new_instructions = { mem = Mem.init size; instructions = new_instructions };;
 
@@ -206,3 +267,14 @@ Machine.dump !ram;;
 ram := (Machine.init 3 [Load(0,0); Load(1,0); Div(2, 0, 1)]);;
 Machine.preprocess !ram;;
 Machine.dump !ram;;
+
+module Machine2 = RAM_Machine(List_memory)
+let ram2 = ref (Machine2.init 3 [Load (1, 2); Move(0, 1); Add (2, 0, 1); Add(6, 0, 1); Mul(0, 1, 2)]);;
+Machine2.step !ram2;;
+Machine2.preprocess !ram2;;
+Machine2.dump !ram2;;
+Machine2.free !ram2;;
+Machine2.clear !ram2;;
+Machine2.dump !ram2;;
+
+
