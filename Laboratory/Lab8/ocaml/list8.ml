@@ -2,6 +2,7 @@ module type Memory = sig
   type 'a t
   exception Alloc_error of string 
   exception IndexOutOfBound of string
+  exception DivBy0 of string
   val init : int -> 'a t
   val get : 'a t -> int -> 'a option
   val set : 'a t -> int -> 'a -> unit
@@ -19,6 +20,8 @@ module Array_memory : Memory = struct
   exception Alloc_error of string;;
 
   exception IndexOutOfBound of string;;
+
+  exception DivBy0 of string;;
 
   let default_size = 1;;
 
@@ -143,7 +146,8 @@ module RAM_Machine (Mem : Memory) = struct
           else ()
         | Div (d, a1, a2) ->
           if is_correct_for_list ([d; a1; a2]) then 
-            make_operation (/) d a1 a2 memory
+            if Mem.get memory.mem a2 = Some(0) then raise (Mem.DivBy0 "Div/0!")
+            else make_operation (/) d a1 a2 memory
           else ()
         | Move (d, a) ->
           if is_correct_for_list [d; a] then
@@ -155,19 +159,10 @@ module RAM_Machine (Mem : Memory) = struct
           else ()
         | Compare (f, d, a1, a2) ->
           if is_correct_for_list [d; a1; a2] then
-            let value1 = Mem.get memory.mem a1 in
-            let value2 = Mem.get memory.mem a2 in
-            begin match (value1, value2) with
-            | (Some v1, Some v2) -> Mem.set memory.mem d (f v1 v2)
-            | _ -> raise (Mem.Alloc_error "error during operation")
-          end 
+            make_operation f d a1 a2 memory
         else ()
     in
-    
-    (* let rec process = function 
-    | [] -> ()
-    | head :: tail -> execute head; process tail
-    in *)
+
     match memory.instructions with
     | [] -> () 
     | instr :: rest ->
@@ -205,5 +200,9 @@ Machine.preprocess !ram;;
 Machine.dump !ram;;
 
 ram := (Machine.init 3 [Load (0, 6); Load(1, 4); Move(0, 3); Compare((fun x y -> if x > y then x else y), 2, 0, 1)]);;
+Machine.preprocess !ram;;
+Machine.dump !ram;;
+
+ram := (Machine.init 3 [Load(0,0); Load(1,0); Div(2, 0, 1)]);;
 Machine.preprocess !ram;;
 Machine.dump !ram;;
