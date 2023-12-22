@@ -90,12 +90,15 @@ module List_memory: Memory = struct
 
   exception DivBy0 of string;;
 
+  let default_size = 1 ;;
+
   let init size = 
     let rec loop i n = 
       if i < n then None :: loop (i + 1) n
       else []
     in
-  ref (loop 0 size)
+  if size < 0 then ref (loop 0 default_size)
+  else ref (loop 0 size)
   ;;
 
   let get memory i = 
@@ -103,15 +106,16 @@ module List_memory: Memory = struct
       | [] -> None
       | head :: tail -> if i = 0 then head else loop tail (i - 1)
     in
-    if i < 0 then raise (IndexOutOfBound "no such a index")
+    if i < 0 || List.length !memory <= i then raise (IndexOutOfBound "no such a index")
     else loop !memory i
+  ;;
 
   let set memory i v = 
     let rec loop lst i = match lst with
       | [] -> []
       | head :: tail -> if i = 0 then (Some v) :: tail else head :: loop tail (i - 1)
     in
-    if i < 0 then raise (IndexOutOfBound "no such a index")
+    if i < 0 || List.length !memory <= i then raise (IndexOutOfBound "no such a index")
     else memory := loop !memory i
   ;;
 
