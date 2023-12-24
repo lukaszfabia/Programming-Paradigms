@@ -1,9 +1,5 @@
 {
   "files.watcherExclude": {
     "**/target": true
-  },
-  "ocaml.sandbox": {
-    "kind": "opam",
-    "switch": "default"
   }
 }
