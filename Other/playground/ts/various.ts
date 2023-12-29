@@ -210,10 +210,27 @@ let lst = mem.dump();
 
 console.log(lst);
 
-type Instruction =
-  | { kind: "Load"; values: [number, number] }
-  | { kind: "Add"; values: [number, number, number] }
-  | { kind: "Sub"; values: [number, number, number] };
+type Add = {
+  kind: "add";
+  param: [number, number, number];
+};
+
+type Load = {
+  kind: "load";
+  param: [number, number];
+};
+
+type Move = {
+  kind: "move";
+  param: [number, number];
+};
+
+type Sub = {
+  kind: "sub";
+  param: [number, number, number];
+};
+
+type Instruction = Add | Load | Sub | Move;
 
 interface Machinable {
   step(): void;
@@ -224,21 +241,99 @@ interface Machinable {
 class RAMMachine implements Machinable {
   private _memory: Memory;
   private _instructions: Instruction[];
+  private _sizeOfInstructions: number;
 
   constructor(memory: Memory, newInstructions: Instruction[]) {
     this._memory = memory;
-    this._instructions = newInstructions;
+    this._instructions = newInstructions.reverse(); // zeby robic pop
+    this._sizeOfInstructions = newInstructions.length;
   }
 
   preprocess(): void {
-    throw new Error("Method not implemented.");
+    for (let i = 0; i < this._sizeOfInstructions; i++) {
+      this.step();
+    }
   }
 
   step(): void {
-    throw new Error("Method not implemented.");
+    const curr = this._instructions.pop();
+    const params = curr?.param;
+    switch (curr?.kind) {
+      /*
+       * Add(d,a1,a2)
+       */
+      case "add":
+        if (this.areAddressesCorrect(params as [number, number, number])) {
+          const [d, a1, a2] = params as [number, number, number];
+          this.makeOperation((a1, a2) => a1 + a2, [d, a1, a2]);
+        }
+        break;
+
+      case "sub":
+        if (this.areAddressesCorrect(params as [number, number, number])) {
+          const [d, a1, a2] = params as [number, number, number];
+          this.makeOperation((a1, a2) => a1 - a2, [d, a1, a2]);
+        }
+        break;
+
+      case "move":
+        if (this.areAddressesCorrect(params as [number, number])) {
+          const [d, a] = params as [number, number];
+          this._memory.set(d, this._memory.get(a));
+        }
+        break;
+
+      case "load":
+        if (this.isCorrect(params?.[0] as number)) {
+          const [d, v] = params as [number, number];
+          this._memory.set(d, v);
+        }
+        break;
+
+      default:
+        console.log("Undefined type of instruction");
+        break;
+    }
   }
 
   dump(): (number | null)[] {
-    throw new Error("Method not implemented.");
+    return this._memory.dump();
+  }
+
+  private isCorrect(address: number): boolean {
+    return address < mem.size && address >= 0;
+  }
+
+  private areAddressesCorrect(addresses: number[]): boolean {
+    addresses.forEach((element) => {
+      if (!this.isCorrect(element)) return false;
+    });
+    return true;
+  }
+
+  private makeOperation(
+    f: (firstAgr: number, secArg: number) => number,
+    addresses: number[]
+  ): void {
+    let [d, a1, a2] = addresses;
+    if (
+      typeof d !== "undefined" &&
+      typeof a1 !== "undefined" &&
+      typeof a2 !== "undefined"
+    )
+      this._memory.set(d, f(this._memory.get(a1), this._memory.get(a2)));
   }
 }
+
+const lstins: Instruction[] = [
+  { kind: "load", param: [0, 1] },
+  { kind: "load", param: [1, 5] },
+  { kind: "load", param: [2, 2] },
+  { kind: "add", param: [3, 1, 2] },
+  { kind: "move", param: [4, 0] },
+];
+
+const ram = new RAMMachine(new ArrayMemory(10), lstins);
+console.log(ram.dump());
+ram.preprocess();
+console.log(ram.dump());
