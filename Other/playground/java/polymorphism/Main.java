@@ -1,12 +1,10 @@
-package Other.playground.java;
+package Other.playground.java.polymorphism;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
-    static Elf basicElf = new CasualElf("TONY");
-    static Elf icicleElf = new IcicleElf("ANTHONY"); 
-    static Elf []workers = new Elf[]{basicElf, icicleElf};
+    static Elf []workers = new Elf[]{new CasualElf("TONY"), new IcicleElf("ANTHONY")};
     
     public static void main(String[] args) {
         List<Bauble> baubles = new LinkedList<>();
@@ -22,6 +20,9 @@ public class Main {
         baubles.add(new IcicleBauble("yellow", "glowing icicle", "icicle", 6.8));
         baubles.add(new BasicBauble("orange", "bauble with sibling name", "Candy", 3.5));
         
+        for (Bauble bauble : baubles) {
+            System.out.println(bauble);
+        }
         letsGo(baubles);
     }
 

@@ -1,4 +1,4 @@
-package Other.playground.java;
+package Other.playground.java.polymorphism;
 
 public class BasicBauble extends Bauble {
     private double radius;
@@ -8,7 +8,7 @@ public class BasicBauble extends Bauble {
     }
     
     @Override
-    public String toString(){
-        return super.toString() + " " + String.format("%-2s", this.radius);
+    public String toString() {
+        return super.toString() + " " + String.format("%.2f", this.radius);
     }
 }

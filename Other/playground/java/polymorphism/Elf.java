@@ -1,4 +1,4 @@
-package Other.playground.java;
+package Other.playground.java.polymorphism;
 
 public abstract class Elf {
     protected static final int CAPACITY = 4;

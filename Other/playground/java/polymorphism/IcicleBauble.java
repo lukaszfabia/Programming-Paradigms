@@ -1,4 +1,4 @@
-package Other.playground.java;
+package Other.playground.java.polymorphism;
 
 // sopel
 public class IcicleBauble extends Bauble{
@@ -10,8 +10,7 @@ public class IcicleBauble extends Bauble{
     }
     
     @Override
-    public String toString(){
-        return super.toString() + " " + String.format("%-2s", this.height);
+    public String toString() {
+        return super.toString() + " " + String.format("%.2f", this.height);
     }
-    
 }
