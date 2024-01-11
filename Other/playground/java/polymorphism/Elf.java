@@ -10,4 +10,8 @@ public abstract class Elf {
     }
 
     public abstract void collect(Bauble currentBauble);
+
+    public String toString(){
+        return nickname + " " + baubles.toString();
+    }
 }

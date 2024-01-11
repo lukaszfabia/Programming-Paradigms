@@ -136,10 +136,11 @@ module List_memory: Memory = struct
   let clear memory = 
     let rec loop lst = match lst with
       | [] -> []
-      | head :: tail -> None :: loop tail
+      | _ :: tail -> None :: loop tail
     in
     memory := loop !memory
   ;;
+
 end
 
 
@@ -157,6 +158,18 @@ Array_memory.clear mem;;
 Array_memory.dump mem;;
 Array_memory.size mem;;
 
+
+let memlist = List_memory.init (3);;
+List_memory.dump memlist;;
+List_memory.get memlist 0;;
+List_memory.set memlist 0 99;;
+List_memory.get memlist 0;;
+List_memory.get memlist 1;;
+List_memory.get memlist 2;;
+List_memory.get memlist 0;;
+List_memory.dump memlist;;
+List_memory.clear memlist;;
+List_memory.dump memlist;;
 
 type compression = int->int->int;;
 

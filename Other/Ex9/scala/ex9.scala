@@ -127,14 +127,14 @@ object Main {
 
     val ex = new ExceptionsExamples()
 
-    // try {
-    //   ex.method1()
-    // } catch {
-    //   case e: Exception =>
-    //     println(e.getMessage + "\n")
-    //     e.printStackTrace()
-    //     e.printStackTrace()
-    // }
+    try {
+      ex.method1()
+    } catch {
+      case e: Exception =>
+        println(e.getMessage + "\n")
+        e.printStackTrace()
+        e.printStackTrace()
+    }
 
     val time1: Time = new NormalTime(-111, 20)
     val time2: Time = new TimeFromMidnight(13412)
@@ -142,5 +142,17 @@ object Main {
     println(time1.before(time2))
     val tim3: Time = time1.convert(time2)
     println(tim3)
+    // println(f1(5))
+    // println(f2(0))
+  }
+
+  private def f1(n: Int): Int = {
+    if n==0 then 1 // dla nieparzystych licz nie bedzie to dzialalo n < 0
+    else n + f1(n-2)
+  }
+
+  private def f2(k: Int): Int = k match {
+    case 0 => f2(k+1)
+    case 1 => k + 1
   }
 }
