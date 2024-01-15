@@ -1,11 +1,11 @@
-package Other.playground.java.polymorphism;
+package Laboratory.Lab9.polymorphism;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
-    static Elf []workers = new Elf[]{new CasualElf("TONY"), new IcicleElf("ANTHONY")};
-    
+    static Elf[] workers = new Elf[] { new CasualElf("TONY"), new IcicleElf("ANTHONY") };
+
     public static void main(String[] args) {
         List<Bauble> baubles = new LinkedList<>();
         baubles.add(new BasicBauble("red", "bauble with son name", "Spehere", 5));
@@ -19,17 +19,20 @@ public class Main {
         baubles.add(new BasicBauble("pink", "bauble with parent name", "Angel", 4.5));
         baubles.add(new IcicleBauble("yellow", "glowing icicle", "icicle", 6.8));
         baubles.add(new BasicBauble("orange", "bauble with sibling name", "Candy", 3.5));
-        
-        for (Bauble bauble : baubles) {
-            System.out.println(bauble);
-        }
+
         letsGo(baubles);
     }
 
-    public static void letsGo(List<Bauble> baubles){
+    public static void letsGo(List<Bauble> baubles) {
         for (Bauble bauble : baubles) {
-            for (Elf worker : workers) {
-                worker.collect(bauble);
+            boolean passedToColleague = false;
+            int i = 0;
+            while (!passedToColleague && i < workers.length) {
+                passedToColleague = workers[i].collect(bauble);
+                i++;
+            }
+            if (!passedToColleague) {
+                System.out.println(bauble.name + ": has been destroyed!");
             }
         }
     }
