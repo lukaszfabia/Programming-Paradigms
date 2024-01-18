@@ -1,7 +1,7 @@
 package Laboratory.Lab9.polymorphism;
 
 public abstract class Elf {
-    protected static final int CAPACITY = 4;
+    protected static final int CAPACITY = 2;
     protected Bauble[] baubles_;
     protected final String nickname_;
     protected int boxPointer_;
@@ -20,5 +20,9 @@ public abstract class Elf {
     @Override
     public String toString() {
         return nickname_ + " " + baubles_.toString();
+    }
+
+    public String getName() {
+        return this.nickname_;
     }
 }

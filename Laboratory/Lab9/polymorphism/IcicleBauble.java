@@ -1,7 +1,7 @@
 package Laboratory.Lab9.polymorphism;
 
 // sopel
-public class IcicleBauble extends Bauble {
+public class IcicleBauble extends MixedBauble {
     private double height;
 
     public IcicleBauble(String color, String name, String shape, double height) {
