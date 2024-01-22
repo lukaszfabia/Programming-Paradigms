@@ -1,9 +1,9 @@
 package Laboratory.Lab9.polymorphism;
 
-public class BasicBauble extends Bauble {
+public class BigBauble extends Bauble {
     private String pattern_;
 
-    public BasicBauble(String color, String name, String shape, String pattern) {
+    public BigBauble(String color, String name, String shape, String pattern) {
         super(color, name, shape);
         this.pattern_ = pattern;
     }

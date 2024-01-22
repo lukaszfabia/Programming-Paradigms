@@ -44,6 +44,7 @@ public class Bauble {
 
             case Basic:
             case BigBauble:
+            case Mixed:
                 return String.format("Name: %-10s Color: %-10s Type: %-10s Pattern: %-10s", this.name_, this.color_,
                         this.type_, this.pattern_);
 
