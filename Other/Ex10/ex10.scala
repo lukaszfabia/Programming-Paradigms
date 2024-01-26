@@ -27,10 +27,10 @@ abstract class Sequence[+A]:
 
 // zad 1 
 
-// class GenericCellImm[T] (val x: T)
+class GenericCellImm[T] (val x: T)
 
-// class GenericCellImm[+T] (val x: T)
+class GenericCellImm[+T] (val x: T)
 
-// class GenericCellMut[T] (var x: T)
+class GenericCellMut[T] (var x: T)
 
-// class GenericCellMut[+T] (val x: T)
+class GenericCellMut[+T] (val x: T)
