@@ -1,0 +1,523 @@
+2024.01.28 20:57:49 INFO  Started: Metals version 1.2.0 in folders 'C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11' for client Visual Studio Code 1.85.2.
+2024.01.28 20:57:55 INFO  no build target found for C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala. Using presentation compiler with project's scala-library version: 3.3.1
+sty 28, 2024 8:57:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2024.01.28 20:57:56 WARN  no build tool detected in workspace 'C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2024.01.28 20:57:56 WARN  Build server is not auto-connectable.
+2024.01.28 20:57:56 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 20:57:56 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Low.scala
+sty 28, 2024 8:57:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9
+sty 28, 2024 8:57:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 26
+sty 28, 2024 8:57:57 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 30
+2024.01.28 20:58:00 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 20:58:01 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/level/High.scala
+2024.01.28 20:58:01 INFO  time: code lens generation in 2.27s
+2024.01.28 20:58:01 INFO  time: code lens generation in 3.78s
+2024.01.28 20:58:01 INFO  time: code lens generation in 4.34s
+2024.01.28 20:58:01 INFO  time: code lens generation in 4.3s
+2024.01.28 20:58:01 INFO  time: code lens generation in 4.92s
+2024.01.28 20:58:01 INFO  time: code lens generation in 4.73s
+2024.01.28 20:58:01 INFO  time: code lens generation in 4.75s
+2024.01.28 20:58:01 INFO  time: code lens generation in 4.48s
+2024.01.28 20:58:01 INFO  time: code lens generation in 4.59s
+2024.01.28 20:58:06 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 20:58:06 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/level/Super.scala
+2024.01.28 20:58:06 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/level/Super.scala
+sty 28, 2024 8:58:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 50
+2024.01.28 20:58:08 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/level/Super.scala
+2024.01.28 20:58:08 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/level/Super.scala
+2024.01.28 20:58:08 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/level/Super.scala
+sty 28, 2024 8:58:10 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 62
+2024.01.28 20:58:19 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 20:58:20 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 20:58:35 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 20:58:35 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/users/User.scala
+2024.01.28 20:58:37 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/users/User.scala
+2024.01.28 20:58:37 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/users/User.scala
+2024.01.28 20:58:48 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 20:59:21 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 20:59:23 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 20:59:41 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\NormalUser.scala
+sty 28, 2024 8:59:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 242
+2024.01.28 20:59:58 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 20:59:58 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/Terminal.scala
+2024.01.28 20:59:59 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/Terminal.scala
+2024.01.28 21:00:09 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:00:17 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\main.scala
+2024.01.28 21:00:21 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+2024.01.28 21:00:31 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+2024.01.28 21:00:38 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+sty 28, 2024 9:00:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 378
+sty 28, 2024 9:00:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 379
+2024.01.28 21:01:22 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+2024.01.28 21:01:24 WARN  Using indexes to guess the definition of High
+2024.01.28 21:01:24 WARN  Using indexes to guess the definition of High
+2024.01.28 21:01:36 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+2024.01.28 21:01:48 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:01:54 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:01:56 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\NormalUser.scala
+2024.01.28 21:01:59 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\NormalUser.scala
+2024.01.28 21:02:00 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\SuperUser.scala
+2024.01.28 21:02:04 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\SuperUser.scala
+2024.01.28 21:02:07 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 21:02:20 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+2024.01.28 21:02:21 WARN  Using indexes to guess the definition of SuperUser
+2024.01.28 21:02:22 WARN  Using indexes to guess the definition of SuperUser
+sty 28, 2024 9:02:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 733
+2024.01.28 21:02:47 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/level/High.scala
+2024.01.28 21:02:49 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:02:53 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+sty 28, 2024 9:02:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 783
+2024.01.28 21:02:59 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/level/Low.scala
+2024.01.28 21:03:00 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Low.scala
+2024.01.28 21:03:05 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/level/Super.scala
+2024.01.28 21:03:05 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 21:03:08 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+2024.01.28 21:03:29 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:03:29 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:03:33 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:03:37 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 21:03:38 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 21:03:44 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:03:45 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:03:48 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 21:03:48 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 21:03:49 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:03:52 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Low.scala
+2024.01.28 21:03:53 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Low.scala
+2024.01.28 21:04:01 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:04:01 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:04:02 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\NormalUser.scala
+2024.01.28 21:04:02 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\NormalUser.scala
+2024.01.28 21:04:06 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\SuperUser.scala
+2024.01.28 21:04:11 WARN  Using indexes to guess the definition of NormalUser
+2024.01.28 21:04:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+Exception in thread "pool-3-thread-1" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:230)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+2024.01.28 21:04:37 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+2024.01.28 21:04:37 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:04:40 WARN  Using indexes to guess the definition of User
+2024.01.28 21:04:40 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 21:04:46 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:04:48 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:04:49 WARN  Using indexes to guess the definition of Low
+sty 28, 2024 9:04:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1158
+2024.01.28 21:04:49 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:04:49 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+Exception in thread "pool-3-thread-2" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:230)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+sty 28, 2024 9:04:50 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1167
+2024.01.28 21:04:50 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:04:50 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Low.scala
+2024.01.28 21:04:51 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:04:51 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Low.scala
+2024.01.28 21:04:52 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:04:54 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+2024.01.28 21:05:05 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+Exception in thread "pool-3-thread-3" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:230)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+Exception in thread "pool-3-thread-4" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:230)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+2024.01.28 21:05:29 WARN  Using indexes to guess the definition of SuperUser
+2024.01.28 21:05:29 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\SuperUser.scala
+2024.01.28 21:05:29 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+sty 28, 2024 9:06:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1322
+Exception in thread "pool-3-thread-5" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:230)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+2024.01.28 21:06:04 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+2024.01.28 21:06:04 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\main.scala
+2024.01.28 21:06:33 WARN  Using indexes to guess the definition of Super
+2024.01.28 21:06:33 WARN  Using indexes to guess the definition of Super
+2024.01.28 21:06:37 WARN  Using indexes to guess the definition of NormalUser
+2024.01.28 21:06:37 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\NormalUser.scala
+2024.01.28 21:06:37 WARN  Using indexes to guess the definition of AdminUser
+2024.01.28 21:06:37 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:06:40 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:06:43 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:06:53 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:07:02 WARN  Using indexes to guess the definition of Terminal
+2024.01.28 21:07:02 WARN  Using indexes to guess the definition of Terminal
+2024.01.28 21:07:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:07:47 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:07:53 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:08:00 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Low.scala
+2024.01.28 21:08:02 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:08:13 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:08:47 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 21:09:09 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:09:09 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:09:12 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+Exception in thread "pool-3-thread-6" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:230)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+sty 28, 2024 9:09:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1622
+2024.01.28 21:09:55 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:10:06 WARN  Using indexes to guess the definition of User
+2024.01.28 21:10:06 WARN  Using indexes to guess the definition of SuperUser
+2024.01.28 21:10:06 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\SuperUser.scala
+2024.01.28 21:10:07 WARN  Using indexes to guess the definition of SuperUser
+2024.01.28 21:10:07 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\SuperUser.scala
+2024.01.28 21:10:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\SuperUser.scala
+sty 28, 2024 9:10:10 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1680
+2024.01.28 21:10:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\SuperUser.scala
+2024.01.28 21:10:16 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\SuperUser.scala
+sty 28, 2024 9:10:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1695
+2024.01.28 21:10:17 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\NormalUser.scala
+sty 28, 2024 9:10:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1703
+2024.01.28 21:10:20 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\NormalUser.scala
+2024.01.28 21:10:20 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\NormalUser.scala
+2024.01.28 21:10:21 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:10:23 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+sty 28, 2024 9:10:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1747
+2024.01.28 21:10:29 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Low.scala
+2024.01.28 21:10:32 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:10:33 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 21:10:35 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 21:10:35 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 21:10:36 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:10:37 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Low.scala
+2024.01.28 21:10:42 WARN  Using indexes to guess the definition of SuperUser
+2024.01.28 21:10:42 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\SuperUser.scala
+2024.01.28 21:10:43 WARN  Using indexes to guess the definition of User
+2024.01.28 21:10:43 WARN  Using indexes to guess the definition of User
+2024.01.28 21:10:47 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 21:10:49 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:10:49 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:11:02 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 21:11:03 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:11:03 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\User.scala
+2024.01.28 21:11:04 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:11:03 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:11:10 WARN  Using indexes to guess the definition of AdminUser
+2024.01.28 21:11:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:11:10 WARN  Using indexes to guess the definition of NormalUser
+2024.01.28 21:11:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\NormalUser.scala
+2024.01.28 21:11:10 WARN  Using indexes to guess the definition of Super
+2024.01.28 21:11:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 21:11:10 WARN  Using indexes to guess the definition of Super
+2024.01.28 21:11:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\Super.scala
+2024.01.28 21:11:10 WARN  Using indexes to guess the definition of AdminUser
+2024.01.28 21:11:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+2024.01.28 21:11:11 WARN  Using indexes to guess the definition of AdminUser
+2024.01.28 21:11:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\users\AdminUser.scala
+sty 28, 2024 9:11:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1989
+2024.01.28 21:11:13 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:11:30 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+Exception in thread "pool-3-thread-7" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:230)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+Exception in thread "pool-3-thread-8" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:230)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+2024.01.28 21:11:33 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:12:17 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:12:18 INFO  Shutting down server
+2024.01.28 21:12:18 INFO  shutting down Metals
+2024.01.28 21:12:18 INFO  Exiting server
+2024.01.28 21:12:44 INFO  Started: Metals version 1.2.0 in folders 'C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11' for client Visual Studio Code 1.85.2.
+2024.01.28 21:12:46 WARN  Build server is not auto-connectable.
+2024.01.28 21:12:47 WARN  no build tool detected in workspace 'C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2024.01.28 21:12:47 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:12:50 INFO  no build target found for C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.01.28 21:12:54 INFO  time: code lens generation in 7.18s
+2024.01.28 21:12:54 INFO  time: code lens generation in 1.12s
+2024.01.28 21:12:56 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:13:04 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:13:21 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:13:24 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:13:38 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:13:44 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+sty 28, 2024 9:13:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 105
+Exception in thread "pool-3-thread-1" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:230)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+Exception in thread "pool-3-thread-2" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:230)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+2024.01.28 21:13:50 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:13:55 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:14:00 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\level\High.scala
+2024.01.28 21:14:04 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:14:08 WARN  Using indexes to guess the definition of High
+2024.01.28 21:14:09 WARN  Using indexes to guess the definition of High
+2024.01.28 21:15:40 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\High.scala
+2024.01.28 21:15:41 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:15:50 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:15:55 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:16:01 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/Main.scala
+2024.01.28 21:16:09 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:16:15 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:16:18 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:16:22 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:16:25 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:16:27 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:16:27 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:16:34 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\High.scala
+2024.01.28 21:16:35 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:16:41 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:16:45 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\AdminUser.scala
+2024.01.28 21:16:47 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\AdminUser.scala
+2024.01.28 21:16:47 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:16:51 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:16:51 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:16:52 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\SuperUser.scala
+2024.01.28 21:16:55 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\SuperUser.scala
+2024.01.28 21:16:56 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Super.scala
+2024.01.28 21:17:00 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Super.scala
+2024.01.28 21:17:03 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:17:05 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:17:05 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:17:05 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:17:06 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:17:05 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:17:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:17:14 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:17:32 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:17:36 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:17:39 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:17:42 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:17:44 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:18:07 WARN  Using indexes to guess the definition of Terminal
+2024.01.28 21:18:07 WARN  Using indexes to guess the definition of Terminal
+2024.01.28 21:18:09 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:18:09 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:18:09 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:18:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:18:11 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:18:12 WARN  Using indexes to guess the definition of High
+2024.01.28 21:18:12 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\High.scala
+2024.01.28 21:18:12 WARN  Using indexes to guess the definition of High
+2024.01.28 21:18:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\High.scala
+2024.01.28 21:19:23 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:19:23 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:19:24 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:19:24 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:19:26 WARN  Using indexes to guess the definition of Terminal
+2024.01.28 21:19:26 WARN  Using indexes to guess the definition of Terminal
+2024.01.28 21:19:27 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:19:27 WARN  Using indexes to guess the definition of NormalUser
+2024.01.28 21:19:27 WARN  Using indexes to guess the definition of NormalUser
+2024.01.28 21:21:33 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+sty 28, 2024 9:23:01 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 826
+2024.01.28 21:23:04 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/Main.scala
+2024.01.28 21:23:06 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:23:07 WARN  Using indexes to guess the definition of Terminal
+2024.01.28 21:23:08 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:23:08 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:23:12 WARN  Could not find semantic tokens for: file:///C:/Users/ufabi/Desktop/Programming-Paradigms/Laboratory/Lab11/scala/Low.scala
+2024.01.28 21:23:17 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:23:20 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\AdminUser.scala
+2024.01.28 21:23:21 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\AdminUser.scala
+2024.01.28 21:23:22 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\High.scala
+2024.01.28 21:23:24 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\High.scala
+2024.01.28 21:23:25 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:23:28 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:23:29 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:23:32 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:23:34 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Super.scala
+2024.01.28 21:23:38 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Super.scala
+2024.01.28 21:23:39 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\SuperUser.scala
+2024.01.28 21:23:43 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\SuperUser.scala
+2024.01.28 21:23:46 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+sty 28, 2024 9:23:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1019
+2024.01.28 21:23:48 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:23:48 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:23:48 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:23:52 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:23:56 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:23:56 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:23:56 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:23:57 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:23:58 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:23:58 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:23:58 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:23:58 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+sty 28, 2024 9:24:00 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1080
+2024.01.28 21:24:02 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:24:02 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:24:02 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:24:02 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:24:02 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:24:03 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:24:03 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:24:03 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:24:04 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+2024.01.28 21:24:34 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:24:37 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:24:39 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\SuperUser.scala
+2024.01.28 21:24:42 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Super.scala
+2024.01.28 21:24:45 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+sty 28, 2024 9:24:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1195
+2024.01.28 21:24:45 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\NormalUser.scala
+sty 28, 2024 9:24:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1205
+2024.01.28 21:24:49 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:24:51 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:24:54 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\AdminUser.scala
+2024.01.28 21:24:59 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\High.scala
+sty 28, 2024 9:25:04 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1288
+2024.01.28 21:25:05 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:07 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:07 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:07 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:07 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:09 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+sty 28, 2024 9:25:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1308
+2024.01.28 21:25:09 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+sty 28, 2024 9:25:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1310
+2024.01.28 21:25:09 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:10 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:11 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:25:12 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:25:12 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:25:14 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\AdminUser.scala
+2024.01.28 21:25:18 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Main.scala
+2024.01.28 21:26:30 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:26:30 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:26:30 WARN  Using indexes to guess the definition of Low
+2024.01.28 21:26:30 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Low.scala
+2024.01.28 21:26:35 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:26:36 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\Terminal.scala
+2024.01.28 21:26:37 WARN  no build target for: C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\scala\User.scala
+2024.01.28 21:29:04 INFO  Started: Metals version 1.2.0 in folders 'C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11' for client Visual Studio Code 1.85.2.
+2024.01.28 21:29:08 INFO  Running List(C:\Users\ufabi\AppData\Local\Coursier\data\bin\scala-cli.BAT, setup-ide, C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11)
+2024.01.28 21:29:09 INFO  Attempting to connect to the build server...
+2024.01.28 21:29:09 INFO  no build target found for C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\Main.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.01.28 21:29:09 INFO  Running BSP server List(C:\Users\ufabi\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\.scala-build\ide-options-v2.json, C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11)
+2024.01.28 21:29:10 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\ufabi\Desktop\Programming-Paradigms\Laboratory\Lab11\.metals\bsp.trace.json or C:\Users\ufabi\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.01.28 21:29:11 INFO  BSP server: Checking https://github.com/coursier/jvm-index/raw/master/index.json
+2024.01.28 21:29:11 INFO  BSP server: Checked https://github.com/coursier/jvm-index/raw/master/index.json
+2024.01.28 21:29:11 INFO  BSP server: Downloading https://github.com/coursier/jvm-index/raw/master/index.json
+2024.01.28 21:29:11 INFO  BSP server: Downloaded https://github.com/coursier/jvm-index/raw/master/index.json
+2024.01.28 21:29:12 INFO  BSP server: Starting compilation server
+2024.01.28 21:29:23 INFO  BSP server: Checking https://repo1.maven.org/maven2/org/scala-lang/scala-library/
+2024.01.28 21:29:23 INFO  BSP server: Checked https://repo1.maven.org/maven2/org/scala-lang/scala-library/
+2024.01.28 21:29:23 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/
+2024.01.28 21:29:23 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/
+2024.01.28 21:29:23 INFO  BSP server: Checking https://repo1.maven.org/maven2/org/scala-lang/scala-library/maven-metadata.xml
+2024.01.28 21:29:23 INFO  BSP server: Checked https://repo1.maven.org/maven2/org/scala-lang/scala-library/maven-metadata.xml
+2024.01.28 21:29:23 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/maven-metadata.xml
+2024.01.28 21:29:23 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala-library/maven-metadata.xml
+2024.01.28 21:29:23 INFO  BSP server: Checking https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/
+2024.01.28 21:29:23 INFO  BSP server: Checked https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/
+2024.01.28 21:29:23 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/
+2024.01.28 21:29:23 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/
+2024.01.28 21:29:23 INFO  BSP server: Checking https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/maven-metadata.xml
+2024.01.28 21:29:23 INFO  BSP server: Checked https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/maven-metadata.xml
+2024.01.28 21:29:23 INFO  BSP server: Downloading https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/maven-metadata.xml
+2024.01.28 21:29:23 INFO  BSP server: Downloaded https://repo1.maven.org/maven2/org/scala-lang/scala3-library_3/maven-metadata.xml
+2024.01.28 21:29:25 INFO  time: Connected to build server in 15s
+2024.01.28 21:29:25 INFO  Connected to Build server: scala-cli v1.0.4
+2024.01.28 21:29:25 INFO  time: Imported build in 0.41s
+2024.01.28 21:29:26 INFO  compiling lab11_bd2c96d2de (9 scala sources)
+2024.01.28 21:29:29 WARN  Could not find java sources in C:\Program Files\Java\src.zip, C:\Program Files\Java\lib\src.zip, C:\Program Files\Java\jre-1.8\src.zip, C:\Program Files\Java\jre-1.8\lib\src.zip, C:\Program Files\Java\src.zip, C:\Program Files\Java\lib\src.zip, C:\Program Files\Java\jre-1.8\src.zip, C:\Program Files\Java\jre-1.8\lib\src.zip. Java symbols will not be available.
+2024.01.28 21:29:30 WARN  Could not find java sources in C:\Program Files\Java\src.zip, C:\Program Files\Java\lib\src.zip, C:\Program Files\Java\jre-1.8\src.zip, C:\Program Files\Java\jre-1.8\lib\src.zip, C:\Program Files\Java\src.zip, C:\Program Files\Java\lib\src.zip, C:\Program Files\Java\jre-1.8\src.zip, C:\Program Files\Java\jre-1.8\lib\src.zip. Java symbols will not be available.
+2024.01.28 21:29:30 WARN  Could not find java sources in C:\Program Files\Java\src.zip, C:\Program Files\Java\lib\src.zip, C:\Program Files\Java\jre-1.8\src.zip, C:\Program Files\Java\jre-1.8\lib\src.zip, C:\Program Files\Java\src.zip, C:\Program Files\Java\lib\src.zip, C:\Program Files\Java\jre-1.8\src.zip, C:\Program Files\Java\jre-1.8\lib\src.zip. Java symbols will not be available.
+2024.01.28 21:29:30 INFO  time: indexed workspace in 5.32s
+2024.01.28 21:29:36 INFO  time: compiled Lab11_bd2c96d2de in 10s
+2024.01.28 21:30:19 INFO  compiling lab11_bd2c96d2de (1 scala source)
+2024.01.28 21:30:21 INFO  time: compiled Lab11_bd2c96d2de in 1.82s
+2024.01.28 21:30:50 INFO  Shutting down server
+2024.01.28 21:30:50 INFO  shutting down Metals
+2024.01.28 21:30:50 INFO  Shut down connection with build server.
+2024.01.28 21:30:50 INFO  Exiting server

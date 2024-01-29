@@ -1,0 +1,1 @@
+trait Super extends High

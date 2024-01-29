@@ -1,0 +1,1 @@
+trait High extends Low
