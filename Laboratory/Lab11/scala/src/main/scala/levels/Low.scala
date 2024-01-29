@@ -1,3 +1,0 @@
-package levels
-
-trait Low
