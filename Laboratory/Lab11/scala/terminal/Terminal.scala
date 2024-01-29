@@ -1,5 +1,7 @@
-// brak + przed read i save bo termianale raczej sa nie zalezne od siebie czyli sa inwariantne
-class Terminal[Read <: Low, Save <: Low](var startSecret: String):
+import scala.levels.Low
+import scala.users.User
+
+class Terminal[Read <: Low, Save <: Low](var startSecret: String) {
   private var secret_ : String = startSecret
 
   def read(user: User[Read, _]): Unit = {
@@ -11,3 +13,4 @@ class Terminal[Read <: Low, Save <: Low](var startSecret: String):
     user.secret(secret_)
     println("save: " + user.instance + ": " + secret_)
   }
+}

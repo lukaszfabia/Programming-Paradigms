@@ -1,4 +1,6 @@
-class NormalUser(var secret: String) extends User[High, Low]:
+import scala.users.User
+
+class NormalUser(var secret: String) extends User[Low, High] {
   private var secret_ : String = secret
 
   override def secret(s: String): Unit = {
@@ -7,3 +9,4 @@ class NormalUser(var secret: String) extends User[High, Low]:
   }
 
   override def instance: String = "normal user"
+}

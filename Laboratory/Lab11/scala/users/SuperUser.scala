@@ -1,5 +1,6 @@
+import scala.users.User
 
-class AdminUser(var secret: String) extends User[High, High]:
+class SuperUser(var secret: String) extends User[Super, Super] {
   private var secret_ : String = secret
 
   override def secret(s: String): Unit = {
@@ -7,4 +8,5 @@ class AdminUser(var secret: String) extends User[High, High]:
     println(instance + " has been changed: " + secret_)
   }
 
-  override def instance: String = "admin user"
+  override def instance: String = "super user"
+}
