@@ -13,7 +13,7 @@ object Main extends App{
   terminal.read(myUser)
   // terminal.save(myUser) nie ma uprawnien przecie 
   terminal.read(normal)
-  // terminal.save(normal) nie uda sie bo nie ma odpowienich uprawnien
+  // terminal.save(normal) //nie uda sie bo nie ma odpowienich uprawnien
 
   terminal.save(admin)
   terminal.read(admin)

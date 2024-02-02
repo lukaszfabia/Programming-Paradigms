@@ -4,8 +4,8 @@ import levels.Low
 class Terminal[Read <: Low, Save <: Low](private var startSecret: String):
 
     def read(user : User[Read, _]): Unit = 
+        user.secret = startSecret //Każde przypisanie x = expr jest interpretowane jako wywołanie metody x_=(expr).
         println("read and captured by " + user.instance + ": " + startSecret)
-        user.secret(startSecret)
 
     def save(user: User[_, Save]): Unit = 
         startSecret = user.secret

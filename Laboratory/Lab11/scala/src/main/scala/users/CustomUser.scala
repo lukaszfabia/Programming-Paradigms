@@ -10,5 +10,3 @@ import levels.*
  */
 class CustomUser[+Read <: Low, +Save <: Low](var secret : String) extends User[Read, Save]:
     override def instance: String = "custom user"
-
-    override def secret(s: String): Unit = secret = s
