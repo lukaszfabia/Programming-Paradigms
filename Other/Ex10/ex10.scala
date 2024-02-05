@@ -20,8 +20,7 @@ abstract class Sequence[+A]:
 
 // zad 1 
 
-class GenericCellMut1[+T] (val x: T) // nalezy zmienic var na val bo problem byl z mutatorem bo 
-// moznaby bylo przypisac różne instancje danego typu do zmiennej
+class GenericCellMut1[+T, B<:T] (var x: B) // nalezy bardziej sprecyzowac typ T 
 
 // class GenericCellMut[-T] (private var x: T)
 
